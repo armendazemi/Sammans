@@ -1,0 +1,94 @@
+//--------------------------
+// TYPOGRAPHY
+// --------------------------
+@font-face
+  font-family: 'Gotham Black'
+  src: asset-url('GOTHAM-BLACK.TTF')
+
+@font-face
+  font-family: 'Gotham Bold'
+  src: asset-url('GOTHAM-BOLD.TTF')
+
+@font-face
+  font-family: 'Gotham Light'
+  src: asset-url('GOTHAM-LIGHT.TTF')
+
+@font-face
+  font-family: 'Gotham Medium'
+  src: asset-url('GOTHAM-MEDIUM.TTF')
+
+$gothamBlack: 'Gotham Black', sans-serif
+$gothamBold: 'Gotham Bold', sans-serif
+$gothamLight: 'Gotham Light', sans-serif
+$gothamMedium: 'Gotham Medium', sans-serif
+
+
+$font-heading: $gothamBold
+$font-body: $gothamMedium
+
+.fw-light
+  font-family: $gothamLight
+
+.fw-regular
+    font-family: $gothamMedium
+
+.fw-bold
+    font-family: $gothamBold
+
+.fw-black
+    font-family: $gothamBlack
+
+// Mixins
+@mixin fontSizePxToRem($value)
+  $remValue: $value / 16
+  font-size: $remValue + rem
+
+$weights: (regular: 400, medium: 500, semi: 600, bold: 700)
+@each $weight, $value in $weights
+  .fw-#{$weight}
+    font-weight: $value !important
+
+// Base
+*
+  font-family: $font-body
+
+h1, h2, h3, h4, h5, h6
+  font-family: $font-heading
+
+// Headings
+
+.display-lg
+  @include fontSizePxToRem(30)
+  @media (min-width: 992px)
+    @include fontSizePxToRem(36)
+
+.display-md
+  @include fontSizePxToRem(24)
+  @media (min-width: 992px)
+    @include fontSizePxToRem(30)
+
+.display-sm
+  @include fontSizePxToRem(20)
+  @media (min-width: 992px)
+    @include fontSizePxToRem(24)
+
+.display-xs
+  @extend .display-xxs
+  @media (min-width: 992px)
+    @include fontSizePxToRem(20)
+
+.display-xxs
+  @include fontSizePxToRem(18)
+
+// Buttons
+.button-lg
+  @include fontSizePxToRem(16)
+
+.button-sm
+  @include fontSizePxToRem(14)
+
+//Text
+$body-text-sizes: (lg: 18, md: 16, sm: 14, xs: 12)
+@each $size, $value in $body-text-sizes
+  .text-#{$size}
+    @include fontSizePxToRem($value)
