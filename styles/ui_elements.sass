@@ -1,0 +1,376 @@
+@import 'colors'
+@import 'typography'
+@import 'spacings_radius'
+//--------------------------
+// Buttons
+// --------------------------
+
+button
+  border: none
+  cursor: pointer
+  transition: all linear 200ms
+
+.button-small
+  height: 36px
+  padding: 0 $spacing-sm
+
+.button-large
+  height: 48px
+  padding: 0 $spacing-base
+
+%button-base
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: $spacing-2xs
+  border-radius: $radius-full
+  border: 1px solid transparent
+  margin: 0
+  text-decoration: none
+  transition: 200ms background-color linear
+
+  &.circle
+    padding: 0 !important
+    width: 54px
+
+  &.large
+    @extend .button-large
+
+  &.small
+    @extend .button-small
+
+
+.icon-small
+  height: 36px
+  width: 36px
+  margin: 0
+  padding: 0 !important
+  display: flex
+  align-items: center
+  justify-content: center
+
+.brand-button-primary
+  @extend %button-base
+  color: $foreground-white
+  background-color: $background-brand-default
+  font-weight: 600
+
+  @media (hover: hover)
+    &:hover
+      background-color: $background-brand-hover
+      color: $foreground-white
+      text-decoration: underline
+
+  &:disabled
+    background-color: $background-disabled
+    color: $text-disabled
+    cursor: not-allowed
+
+
+.brand-button-secondary
+  @extend %button-base
+  background-color: $background-default
+  font-weight: 600
+  color: $foreground-brand-default
+  border: 1px solid $border-brand-default
+
+  @media (hover: hover)
+    &:hover
+      background-color: $background-hover-light
+      color: $foreground-brand-hover
+      text-decoration: underline
+
+  &:disabled
+    background-color: $background-default
+    border-color: $border-disabled
+    color: $text-disabled
+
+
+.neutral-button-primary
+  @extend %button-base
+  background-color: $white
+  color: $foreground-primary
+  text-decoration: none
+
+  @media (hover: hover)
+    &:hover
+      text-decoration: underline
+      color: $foreground-primary
+
+  &:disabled
+    background-color: $background-disabled
+    color: $text-disabled
+    cursor: not-allowed
+
+
+.neutral-button-secondary
+  @extend %button-base
+  background-color: transparent
+  color: $white
+  border: 3px solid $white
+  text-decoration: none
+
+  @media (hover: hover)
+    &:hover
+      text-decoration: underline
+      color: $white
+
+  &:disabled
+    background-color: $background-default
+    border-color: $border-disabled
+    color: $text-disabled
+    cursor: not-allowed
+
+
+.navigation-button
+  @extend %button-base
+  background-color: $background-default
+  color: $foreground-primary
+  font-weight: 600
+  padding: $spacing-xs $spacing-2xs
+
+  @media (hover: hover)
+    &:hover
+      text-decoration: underline
+      background-color: $background-hover-light !important
+
+  &:disabled
+    background-color: $background-default
+    color: $text-disabled
+    cursor: not-allowed
+
+    path
+      stroke: $text-disabled
+
+.nav-menu-item
+  @extend %button-base
+  @include fontSizePxToRem(18)
+  background-color: $white
+  color: $text-primary
+  font-weight: 400
+  padding: $spacing-sm $spacing-base
+  justify-content: flex-start
+
+.nav-menu-item--child
+  @include fontSizePxToRem(18)
+
+.nav-menu-item--grandchild
+  @include fontSizePxToRem(14)
+  font-weight: 400
+
+
+// --------------------------
+// LINKS TABS & BREADCRUMBS$
+// --------------------------
+%link-base
+  display: flex
+  align-items: center
+  gap: $spacing-3xs
+  text-decoration: none
+  background-color: transparent
+  transition: 200ms all linear
+
+  @media (hover: hover)
+    &:hover,
+    &:active
+      text-decoration: underline !important
+
+  &:disabled
+    color: $text-disabled
+    cursor: not-allowed
+
+.brand-link
+  @extend %link-base
+  color: $foreground-brand-default
+
+.black-link
+  @extend %link-base
+  color: $text-primary
+
+.white-link
+  @extend %link-base
+  color: $foreground-white
+
+
+.link-small
+  @include fontSizePxToRem(14)
+  font-weight: 400
+
+.link-medium
+  @include fontSizePxToRem(14)
+  font-weight: 600
+
+.link-large
+  @include fontSizePxToRem(16)
+  font-weight: 600
+
+.search-result-link
+  @extend %link-base
+  color: $text-primary
+  @include fontSizePxToRem(16)
+  padding: $spacing-xs $spacing-sm
+
+.tab-default
+  @extend %link-base
+  color: $text-primary
+  @extend .button-lg
+
+  &:hover,
+  &:active,
+  &.active
+    text-decoration: underline
+    background-color: $background-hover-light
+
+  &:disabled
+    color: $text-disabled
+    cursor: not-allowed
+
+
+.breadcrumb-link
+  @extend %link-base
+  color: $text-primary
+  font-weight: 400
+
+  &.active
+    color: $text-brand-default
+    font-weight: 700
+
+  &:hover,
+  &:active
+    text-decoration: underline
+
+  &:disabled
+    color: $text-disabled
+    cursor: not-allowed
+
+
+// --------------------------
+// INPUTS
+// --------------------------
+
+%base-input
+  display: flex
+  align-items: center
+  justify-content: space-between
+  gap: $spacing-xs
+  padding: 0 $spacing-sm
+  height: 48px
+  min-width: 0
+  border-radius: $radius-sm !important
+  border: 1px solid $border-primary
+  color: $text-primary
+  outline: none
+  transition: 200ms border-color linear, 200ms color linear, 200ms background-color linear
+
+  &::placeholder
+    color: $text-tertiary
+
+  &:focus-visible,
+  &:active
+    border-color: $border-focused-system !important
+
+  &.error
+    border-color: $system-error-default !important
+
+    &:focus-visible,
+    &:active
+      border-color: $system-error-default !important
+
+  &:disabled
+    background-color: $background-disabled
+    border-color: $border-disabled
+    color: $text-disabled
+    cursor: not-allowed
+
+.input-default
+  @extend %base-input
+  background-color: $background-default
+
+.search-input
+  padding-left: $spacing-3xl
+  padding-right: $spacing-4xl
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M17.5 17.5L13.875 13.875M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z" stroke="%23030712" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+  background-repeat: no-repeat
+  background-position: $spacing-sm center
+
+  &:focus-visible,
+  &:active
+    border-color: $foreground-primary
+
+.search-input-clear
+  display: none
+  position: absolute
+  right: 6px
+  opacity: 0
+  transition: 200ms opacity linear
+
+  &.open
+    opacity: 1
+
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration
+  display: none
+
+.checkbox-default
+  height: 20px
+  width: 20px
+  flex-shrink: 0
+  flex-grow: 0
+  padding: 0 !important
+  border-radius: $radius-xs
+  border-color: $border-primary
+
+.checkbox--brand-primary
+  accent-color: $background-brand-default
+
+
+.radio-default
+  height: 20px
+  width: 20px
+  flex-shrink: 0
+  border-radius: $radius-full
+
+.radio--brand-primary
+  accent-color: $background-brand-default
+// --------------------------
+// SCROLLBAR
+// --------------------------
+
+::-webkit-scrollbar
+  width: 14px
+
+
+::-webkit-scrollbar-thumb
+  border: 4px solid rgba(0, 0, 0, 0)
+  background-clip: padding-box
+  border-radius: 9999px
+  background-color: $foreground-scrollbar
+
+
+// --------------------------
+// BADGES
+// --------------------------
+.badge
+  display: flex
+  align-items: center
+  justify-content: center
+  border: 1px solid $border-primary
+  border-radius: $radius-xs
+  color: $text-primary
+  font-weight: 500
+
+.badge--small
+  @include fontSizePxToRem(12)
+  height: 22px
+
+.badge--large
+  @include fontSizePxToRem(14)
+  height: 28px
+
+.badge--error
+  background-color: $system-error-background
+  border-color: $system-error-default
+  color: $system-error-default

@@ -89,12 +89,12 @@
   </script>
 </head>
 
-<body class="">
+<body>
 <main>
   <header>
-    <nav>
+    <nav class="bg-brand-default d-flex align-items">
       <div class="container">
-        <div class="row">
+        <div class="row h-100 align-items-center justify-content-between">
           <div class="col-auto">
             <a href="/" class="nav-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="160" height="20" viewBox="0 0 160 20" fill="none">
@@ -122,6 +122,10 @@
               </svg>
             </a>
           </div>
+
+          {% include 'desktop_menu' %}
+
+          {% include 'mobile_menu' %}
         </div>
       </div>
     </nav>
@@ -129,4 +133,9 @@
 </main>
 </body>
 </html>
+
+{% include 'mobile_menu_modal' %}
+{% include 'side_cart' %}
+
+<overlay-component></overlay-component>
 

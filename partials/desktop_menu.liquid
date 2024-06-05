@@ -1,0 +1,36 @@
+<div class="col-auto d-none d-xl-flex align-items-center desktop-nav-links column-gap-lg-5xl">
+  <div class="d-flex align-items-center column-gap-2xl">
+    <a href="/catalog/products" class="white-link">{{ "Gör små saker med stor kärlek" | t }}</a>
+    {{ 'full' | menu: 'main-menu d-none d-lg-flex' }}
+  </div>
+
+  <div class="d-flex align-items-center column-gap-xl">
+    <a href="/u/lectures" class="neutral-button-secondary button-large fw-bold">
+      {{ "Utbildningar" | t }}
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path
+          d="M17.5 7.5L17.5 2.5M17.5 2.5H12.5M17.5 2.5L10.8333 9.16667M8.33333 4.16667H6.5C5.09987 4.16667 4.3998 4.16667 3.86502 4.43915C3.39462 4.67883 3.01217 5.06129 2.77248 5.53169C2.5 6.06647 2.5 6.76654 2.5 8.16667V13.5C2.5 14.9001 2.5 15.6002 2.77248 16.135C3.01217 16.6054 3.39462 16.9878 3.86502 17.2275C4.3998 17.5 5.09987 17.5 6.5 17.5H11.8333C13.2335 17.5 13.9335 17.5 14.4683 17.2275C14.9387 16.9878 15.3212 16.6054 15.5608 16.135C15.8333 15.6002 15.8333 14.9001 15.8333 13.5V11.6667"
+          stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <button type="button" class="button-large white-link fw-bold d-flex align-items-center column-gap-2xs"
+            aria-expanded="false" aria-label="{{ "Öppna varukorg" | t }}" aria-haspopup="true" aria-controls="side-cart"
+            data-modal-action="flex" data-modal-element="#side-cart">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <g clip-path="url(#clip0_298_724)">
+          <path
+            d="M9.16797 3.3332H5.66797C4.26784 3.3332 3.56777 3.3332 3.03299 3.60568C2.56259 3.84536 2.18014 4.22782 1.94045 4.69822C1.66797 5.233 1.66797 5.93307 1.66797 7.3332V14.3332C1.66797 15.7333 1.66797 16.4334 1.94045 16.9682C2.18014 17.4386 2.56259 17.821 3.03299 18.0607C3.56777 18.3332 4.26784 18.3332 5.66797 18.3332H12.668C14.0681 18.3332 14.7682 18.3332 15.3029 18.0607C15.7734 17.821 16.1558 17.4386 16.3955 16.9682C16.668 16.4334 16.668 15.7333 16.668 14.3332V10.8332M6.66795 13.3332H8.0634C8.47105 13.3332 8.67488 13.3332 8.86669 13.2871C9.03675 13.2463 9.19932 13.179 9.34844 13.0876C9.51664 12.9845 9.66076 12.8404 9.94902 12.5521L17.918 4.5832C18.6083 3.89284 18.6083 2.77355 17.918 2.0832C17.2276 1.39284 16.1083 1.39284 15.418 2.0832L7.449 10.0521C7.16074 10.3404 7.01662 10.4845 6.91355 10.6527C6.82217 10.8018 6.75482 10.9644 6.714 11.1345C6.66795 11.3263 6.66795 11.5301 6.66795 11.9378V13.3332Z"
+            stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <defs>
+          <clipPath id="clip0_298_724">
+            <rect width="20" height="20" fill="white"/>
+          </clipPath>
+        </defs>
+      </svg>
+      {{ "Anmälan" | t }}
+    </button>
+  </div>
+</div>
+

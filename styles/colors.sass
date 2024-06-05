@@ -1,0 +1,116 @@
+//--------------------------
+// Primitive Color Variables
+// --------------------------
+
+// Neutral Colors
+$white: #fff
+$neutral-50: #FCFCFC
+$neutral-100: #f3f4f6
+$neutral-200: #e5e7eb
+$neutral-400: #9ca3af
+$neutral-600: #4b5563
+$neutral-700: #374151
+$neutral-900: #111827
+$neutral-950: #030712
+
+// Primary Colors
+$primary-50: #FDF3F3
+$primary-600: #CD4158
+$primary-700: #a92740
+$primary-900: #7A2137
+
+// Secondary Colors
+$secondary-100: #FFE4E6
+$secondary-600: #E11D48
+$secondary-800: #BE123C
+$secondary-900: #881337
+
+// System Colors
+$red-50: #fef2f2
+$red-400: #F87171
+$red-600: #dc2626
+
+$green-50: #f0fff4
+$green-300: #97deb3
+$green-700: #15803d
+$blue-600: #1570ef
+
+// Overlay & Transparency
+$alpha-black-20: rgba(0, 0, 0, 0.2)
+$alpha-black-40: rgba(0, 0, 0, 0.4)
+$alpha-black-60: rgba(0, 0, 0, 0.6)
+
+$alpha-white-60: rgba(255, 255, 255, 0.6)
+$alpha-white-80: rgba(255, 255, 255, 0.8)
+
+//--------------------------
+// Semantic Color Variables
+// --------------------------
+
+// Text Colors
+$text-primary: $neutral-950
+$text-secondary: $neutral-700
+$text-tertiary: $neutral-600
+$text-white: $white
+$text-brand-default: $primary-700
+$text-brand-hover: $primary-900
+$text-disabled: $neutral-400
+
+$text-colors: (primary: $text-primary, secondary: $text-secondary, tertiary: $text-tertiary, white: $text-white, brand-default: $text-brand-default, brand-hover: $text-brand-hover, disabled: $text-disabled)
+@each $name, $value in $text-colors
+  .text-#{$name}
+    color: $value !important
+
+
+// Foreground
+$foreground-white: $white
+$foreground-primary: $neutral-950
+$foreground-secondary: $neutral-400
+$foreground-input-icons: $neutral-400
+$foreground-brand-default: $primary-600
+$foreground-brand-hover: $primary-700
+$foreground-scrollbar: $neutral-200
+$foreground-disabled: $neutral-400
+
+// Background
+$background-default: $white
+$background-secondary: $neutral-100
+$background-hover-light: $neutral-100
+$background-hover-dark: $neutral-700
+$background-dark-background: $neutral-950
+$background-dark-section: $neutral-950
+$background-disabled: $neutral-100
+
+$background-brand-default: $primary-600
+$background-brand-hover: $primary-700
+$background-brand-light-section: $primary-50
+
+// Border
+$border-primary: $neutral-400
+$border-secondary: $neutral-200
+$border-hover: $neutral-950
+$border-divider: $neutral-200
+
+$border-brand-default: $primary-600
+$border-brand-hover: $primary-600
+$border-focused-system: $blue-600
+$border-focused-black: $neutral-950
+$border-disabled: $neutral-200
+
+// System/Error
+$system-error-default: $red-600
+$system-error-border: $red-400
+$system-error-background: $red-50
+
+// Overlay
+$overlay-black-20: $alpha-black-20
+$overlay-black-40: $alpha-black-40
+$overlay-black-60: $alpha-black-60
+$overlay-white-60: $alpha-white-60
+$overlay-white-80: $alpha-white-80
+
+
+$bg-colors: (default: $background-default, secondary: $background-secondary, hover-light: $background-hover-light, disabled: $background-disabled, brand-default: $background-brand-default, brand-light-section: $background-brand-light-section, brand-hover: $background-brand-hover, overlay-black-20: $overlay-black-20, overlay-black-40: $overlay-black-40, overlay-black-60: $overlay-black-60, overlay-white-60: $overlay-white-60, overlay-white-80: $overlay-white-80, error-border: $system-error-border, error-default: $system-error-default)
+@each $name, $value in $bg-colors
+  .bg-#{$name}
+    background-color: $value !important

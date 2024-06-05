@@ -1,42 +1,8 @@
 //--------------------------
 // TYPOGRAPHY
 // --------------------------
-@font-face
-  font-family: 'Gotham Black'
-  src: asset-url('GOTHAM-BLACK.TTF')
-
-@font-face
-  font-family: 'Gotham Bold'
-  src: asset-url('GOTHAM-BOLD.TTF')
-
-@font-face
-  font-family: 'Gotham Light'
-  src: asset-url('GOTHAM-LIGHT.TTF')
-
-@font-face
-  font-family: 'Gotham Medium'
-  src: asset-url('GOTHAM-MEDIUM.TTF')
-
-$gothamBlack: 'Gotham Black', sans-serif
-$gothamBold: 'Gotham Bold', sans-serif
-$gothamLight: 'Gotham Light', sans-serif
-$gothamMedium: 'Gotham Medium', sans-serif
-
-
-$font-heading: $gothamBold
-$font-body: $gothamMedium
-
-.fw-light
-  font-family: $gothamLight
-
-.fw-regular
-    font-family: $gothamMedium
-
-.fw-bold
-    font-family: $gothamBold
-
-.fw-black
-    font-family: $gothamBlack
+$font-heading: "Montserrat", sans-serif
+$font-body: "Montserrat", sans-serif
 
 // Mixins
 @mixin fontSizePxToRem($value)
@@ -60,7 +26,7 @@ h1, h2, h3, h4, h5, h6
 .display-lg
   @include fontSizePxToRem(30)
   @media (min-width: 992px)
-    @include fontSizePxToRem(36)
+    @include fontSizePxToRem(40)
 
 .display-md
   @include fontSizePxToRem(24)
