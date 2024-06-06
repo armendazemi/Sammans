@@ -149,7 +149,66 @@ modal-component
   p
     font-weight: 600
 
+.brand-button-primary-editable
+  a
+    @extend .brand-button-primary
+    @extend .button-large
+    font-weight: 700
 
+
+.brand-buttons
+  p:has(a)
+    a
+      @extend .brand-button-secondary
+      @extend .button-large
+      font-weight: 700
+
+  p:first-of-type
+    a
+      @extend .brand-button-primary
+
+.neutral-buttons
+  p:has(a)
+    a
+      @extend .neutral-button-secondary
+      @extend .button-large
+      font-weight: 700
+
+  p:first-of-type
+    a
+      @extend .neutral-button-primary
+
+.neutral-button-primary-editable
+  a
+    @extend .neutral-button-primary
+    @extend .button-large
+    @include fontSizePxToRem(16)
+    font-weight: 700
+
+
+.brand-links
+  a
+    @extend .brand-link
+
+.brand-links--padding-base
+  a
+    padding: $spacing-base $spacing-xs
+
+.small-links
+  a
+    @extend .link-small
+
+
+.callout-image
+  img
+    border-radius: $radius-lg
+    object-fit: cover
+    aspect-ratio: .857
+    width: 100%
+
+.mobile-nav-link
+  padding: $spacing-sm $spacing-xs
+  font-weight: 700
 // ------------------------------
 // HEADER
 // ------------------------------
@@ -159,17 +218,26 @@ header
 nav
   height: 80px
 
-.main-menu
-  display: flex
-  align-items: center
+.main-nav-links
   column-gap: $spacing-2xl
   list-style: none
   padding: 0
   margin: 0
 
+  @media (min-width: 1200px)
+    align-items: center
+
 .site-menu-item
   a
     @extend .white-link
+
+.main-nav-links--mobile
+  gap: $spacing-xs
+
+  .site-menu-item
+    a
+      @extend .mobile-nav-link
+
 
 .side-menu
   position: fixed
@@ -222,3 +290,30 @@ nav
   height: calc(100% - 80px)
   background-color: $white
   transition: opacity 0.3s ease-in-out
+
+  @media (min-width: 1200px)
+    display: none !important
+
+// ------------------------------
+// START
+// ------------------------------
+.hero-image-wrapper
+  img
+    width: 100%
+    min-height: 600px
+    max-height: 800px
+    object-fit: cover
+    @media (min-width: 992px)
+      max-height: 528px
+      aspect-ratio: 6/7
+
+.hero-text-container
+  position: absolute
+  inset: 0
+
+
+.education-card__image
+  img
+    border-radius: $spacing-base $spacing-base 0 0
+    height: 277px
+

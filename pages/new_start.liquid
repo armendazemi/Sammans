@@ -1,0 +1,125 @@
+{% include 'new_header' %}
+<top-element>
+  <section class="hero-section position-relative">
+    <div class="hero-image-wrapper">
+      <img
+        height="724"
+        width="1440"
+        src="{{ lists.hero-bild-ny-startsida.rows[0].bild_mobil }}"
+        srcset="{{ lists.hero-bild-ny-startsida.rows[0].bild_mobil }} 768w, {{ lists.hero-bild-ny-startsida.rows[0].bild_desktop }} 1440w"
+        alt="Hero bild">
+    </div>
+
+
+    <div class="container hero-text-container">
+      <div class="row align-items-center h-100">
+        <div class="col-12 col-lg-7">
+          <div
+            class="hero-text-wrapper d-flex flex-column row-gap-xl padding-y-2xl padding-x-2xl bg-overlay-black-60 radius-md">
+            <div class="d-flex flex-column row-gap-xl padding-bottom-base">
+              <h1
+                class="hero-title display-lg fw-bold text-white">{{ lists.hero-bild-ny-startsida.rows[0].rubrik }}</h1>
+              <p class="text-lg text-white">{{ lists.hero-bild-ny-startsida.rows[0].text }}</p>
+            </div>
+            <div class="d-flex flex-column flex-lg-row gap-base">
+              {% if lists.hero-bild-ny-startsida.rows[0].rod_knapp_text.size > 0 %}
+                <a href="{{ lists.hero-bild-ny-startsida.rows[0].rod_knapp_lank }}"
+                   class="brand-button-primary large">{{ lists.hero-bild-ny-startsida.rows[0].rod_knapp_text }}</a>
+              {% endif %}
+
+              {% if lists.hero-bild-ny-startsida.rows[0].knapp_white_text.size > 0 %}
+                <a href="{{ lists.hero-bild-ny-startsida.rows[0].vit_knapp_text }}"
+                   class="brand-button-secondary large">{{ lists.hero-bild-ny-startsida.rows[0].vit_knapp_lank }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</top-element>
+
+
+<section class="padding-y-5xl padding-y-lg-6xl bg-default">
+  <div class="container">
+    <div class="row row-gap-2xl align-items-center justify-content-between">
+      {{ 'hero-image-start-first' | page_editable: class: 'col-12 col-lg-5 callout-image' }}
+
+      <div class="d-flex flex-column row-gap-xl col-12 col-lg-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="49" viewBox="0 0 48 49" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M23.9863 10.7716C19.9876 6.0968 13.3195 4.83929 8.30939 9.12003C3.29929 13.4008 2.59394 20.558 6.5284 25.6208C9.79963 29.8302 19.6995 38.7082 22.9442 41.5817C23.3072 41.9031 23.4887 42.0639 23.7004 42.127C23.8852 42.1822 24.0874 42.1822 24.2722 42.127C24.4839 42.0639 24.6654 41.9031 25.0284 41.5817C28.2731 38.7082 38.173 29.8302 41.4442 25.6208C45.3787 20.558 44.7594 13.3557 39.6632 9.12003C34.567 4.88431 27.985 6.0968 23.9863 10.7716Z"
+                stroke="#CD4158" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        {{ 'hero-text-start-first' | page_editable: class: 'd-flex flex-column row-gap-xl align-items-lg-start display-md-heading text-lg-p brand-button-primary-editable' }}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="padding-y-5xl padding-y-lg-6xl bg-brand-default">
+  <div class="container">
+    <div class="row justify-content-between align-items-end row-gap-2xl">
+      <div class="col-12 col-lg-7 d-flex flex-column row-gap-base">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <path
+            d="M10 20.0001V32.0224C10 32.7403 10 33.0993 10.1093 33.4162C10.206 33.6965 10.3637 33.9517 10.5712 34.1635C10.8057 34.403 11.1268 34.5635 11.7689 34.8846L22.5689 40.2846C23.0936 40.5469 23.356 40.6781 23.6312 40.7298C23.8749 40.7755 24.1251 40.7755 24.3688 40.7298C24.644 40.6781 24.9064 40.5469 25.4311 40.2846L36.2311 34.8846C36.8732 34.5635 37.1943 34.403 37.4288 34.1635C37.6363 33.9517 37.794 33.6965 37.8907 33.4162C38 33.0993 38 32.7403 38 32.0224V20.0001M4 17.0001L23.2845 7.3579C23.5468 7.22672 23.678 7.16113 23.8156 7.13531C23.9375 7.11245 24.0625 7.11245 24.1844 7.13531C24.322 7.16113 24.4532 7.22672 24.7155 7.3579L44 17.0001L24.7155 26.6424C24.4532 26.7735 24.322 26.8391 24.1844 26.8649C24.0625 26.8878 23.9375 26.8878 23.8156 26.8649C23.678 26.8391 23.5468 26.7735 23.2845 26.6424L4 17.0001Z"
+            stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        {{ 'education-section-text' | page_editable: class: 'd-flex flex-column row-gap-base display-md-heading text-lg-p' }}
+      </div>
+      <div class="col-auto">
+        <a href="/u" class="neutral-button-secondary button-large fw-bold">
+          {{ "Utforska alla utbildningar" | t }}
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M17.5 7.50001L17.5 2.50001M17.5 2.50001H12.5M17.5 2.50001L10 10M8.33333 2.5H6.5C5.09987 2.5 4.3998 2.5 3.86502 2.77248C3.39462 3.01217 3.01217 3.39462 2.77248 3.86502C2.5 4.3998 2.5 5.09987 2.5 6.5V13.5C2.5 14.9001 2.5 15.6002 2.77248 16.135C3.01217 16.6054 3.39462 16.9878 3.86502 17.2275C4.3998 17.5 5.09987 17.5 6.5 17.5H13.5C14.9001 17.5 15.6002 17.5 16.135 17.2275C16.6054 16.9878 16.9878 16.6054 17.2275 16.135C17.5 15.6002 17.5 14.9001 17.5 13.5V11.6667"
+              stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="row row-gap-2xl justify-content-center margin-top-2xl margin-top-lg-4xl">
+      {% for item in lists.startsida-boxar.rows %}
+        <div class="col-12 col-lg-4">
+          <div class="education-card h-100 d-flex flex-column row-gap-xl radius-lg bg-default padding-bottom-xl">
+            <div class="education-card__image">
+              <img src="{{ item.bild }}" alt="" class="w-100">
+            </div>
+
+            <div class="education-card__content d-flex flex-column row-gap-xs padding-x-lg">
+              <h3 class="display-sm fw-bold">{{ item.rubrik }}</h3>
+              <p class="text-lg text-secondary">{{ item.text | strip_html | truncate: 200 }}</p>
+            </div>
+
+            <div class="education-card__footer d-flex justify-content-center padding-x-base mt-auto">
+              <a href="{{ item.lank }}" class="brand-button-primary button-large">
+                {{ item.lanktext }}
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<section class="padding-y-5xl padding-y-lg-6xl bg-default">
+  <div class="container">
+    <div class="row row-gap-5xl align-items-center justify-content-between">
+      <div class="d-flex flex-column row-gap-xl col-12 col-lg-6 order-1 order-lg-0">
+        {{ 'hero-text-start-second' | page_editable: class: 'd-flex flex-column row-gap-xl align-items-lg-start display-md-heading text-lg-p brand-button-primary-editable' }}
+      </div>
+
+
+      {{ 'hero-image-start-second' | page_editable: class: 'col-12 col-lg-5 callout-image order-0 order-lg-1' }}
+
+    </div>
+  </div>
+</section>
+
+
+{% include 'new_footer' %}
