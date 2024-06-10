@@ -1,0 +1,131 @@
+{% include 'new_header' %}
+
+<top-element>
+  <section class="hero-section position-relative">
+    <div class="hero-image-wrapper">
+      <img
+        height="724"
+        width="1440"
+        src="{{ lists.hero-bild-produkter.rows[0].bild_mobil }}"
+        srcset="{{ lists.hero-bild-produkter.rows[0].bild_mobil }} 768w, {{ lists.hero-bild-produkter.rows[0].bild_desktop }} 1440w"
+        alt="Hero bild">
+    </div>
+
+
+    <div class="container hero-text-container">
+      <div class="row align-items-center h-100">
+        <div class="col-12 col-lg-7">
+          <div
+            class="hero-text-wrapper d-flex flex-column row-gap-xl padding-y-2xl padding-x-2xl bg-overlay-black-60 radius-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M23.9863 10.2716C19.9876 5.5968 13.3195 4.33929 8.30939 8.62003C3.29929 12.9008 2.59394 20.058 6.5284 25.1208C9.79963 29.3302 19.6995 38.2082 22.9442 41.0817C23.3072 41.4031 23.4887 41.5639 23.7004 41.627C23.8852 41.6822 24.0874 41.6822 24.2722 41.627C24.4839 41.5639 24.6654 41.4031 25.0284 41.0817C28.2731 38.2082 38.173 29.3302 41.4442 25.1208C45.3787 20.058 44.7594 12.8557 39.6632 8.62003C34.567 4.38431 27.985 5.5968 23.9863 10.2716Z"
+                    stroke="#CD4158" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="d-flex flex-column row-gap-xl padding-bottom-base">
+              <h1
+                class="hero-title display-lg fw-bold text-white">{{ lists.hero-bild-produkter.rows[0].rubrik }}</h1>
+              <p class="text-lg text-white">{{ lists.hero-bild-produkter.rows[0].text }}</p>
+            </div>
+            <div class="d-flex flex-column flex-lg-row gap-base">
+              {% if lists.hero-bild-produkter.rows[0].rod_knapp_text.size > 0 %}
+                <a href="{{ lists.hero-bild-produkter.rows[0].rod_knapp_lank }}"
+                   class="brand-button-primary large">
+                  {{ lists.hero-bild-produkter.rows[0].rod_knapp_text }}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M10 3.33301V16.6663M10 16.6663L15 11.6663M10 16.6663L5 11.6663" stroke="white"
+                          stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              {% endif %}
+
+              {% if lists.hero-bild-produkter.rows[0].knapp_white_text.size > 0 %}
+                <a href="{{ lists.hero-bild-produkter.rows[0].vit_knapp_text }}"
+                   class="brand-button-secondary large">{{ lists.hero-bild-produkter.rows[0].vit_knapp_lank }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</top-element>
+
+<section class="bg-brand-default padding-y-5xl padding-y-lg-6xl ">
+  <div class="container">
+    <div class="row row-gap-base">
+      {{ 'theme-heading' | global_editable: class: 'col-12 col-lg-6 d-flex flex-column row-gap-base display-md-heading text-xl-p' }}
+      {{ 'theme-info' | global_editable: class: 'col-12 col-lg-6 d-flex flex-column row-gap-base display-md-heading text-lg-p' }}
+    </div>
+  </div>
+</section>
+
+
+<div id="lectures"></div>
+
+<section class="bg-default padding-y-5xl padding-y-lg-6xl ">
+  <div class="container">
+    <div class="row row-gap-3xl padding-y-2xl">
+      <div class="col-12 col-lg-8 offset-lg-1">
+        <label class="display-xs fw-bold margin-bottom-xs" for="lecture-search">{{ "Sök föreläsningar" }}</label>
+        <div class="d-flex flex-column flex-lg-row gap-lg ">
+          <input class="input-default flex-grow-1" type="search" id="lecture-search"
+                 placeholder="{{ "Sök på namn, föreläsare..." | t }}">
+
+          <button type="submit" aria-label="Sök" class="brand-button-primary button-large" id="lecture-search-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path
+                d="M17.5 17.5L13.875 13.875M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z"
+                stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            {{ "Sök" | t }}</button>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-8 offset-lg-1">
+        <div class="d-flex column-gap-lg border-b-secondary product-tabs">
+          <a href="/catalog/products" class="tab-default text-lg fw-bold"> {{ "Aktuella föreläsningar" | t }}</a>
+          <a href="/gamla-kurser" class="tab-default active text-lg fw-bold "> {{ "Arkiv" | t }}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row row-gap-2xl justify-content-center">
+      {% if groups.gamla-kurser.products.all.size > 0 %}
+        {% for lecture in groups.gamla-kurser.products.all %}
+          <div class="col-12 col-lg-11 offset-lg-1">
+            {% include 'product_card' %}
+          </div>
+        {% endfor %}
+
+        <!-- If there are no lectures -->
+      {% else %}
+        <div class="col-12 col-lg-6 padding-y-4xl">
+          <div class="d-flex flex-column row-gap-2xl">
+            <div class="d-flex flex-column row-gap-sm justify-content-center">
+              <h2 class="display-xs fw-bold">{{ "Det finns inga aktuella föreläsningar just nu." | t }}</h2>
+              <p
+                class="text-md text-secondary">{{ "Se gärna våra gågna föreläsningar i vårt arkiv eller utforska våra utbildningar i vår utbldningsportal" | t }}</p>
+            </div>
+
+            <div class="d-flex flex-column flex-lg-row gap-xs align-items-start">
+              <a href="/gamla-kurser" class="brand-button-primary button-large">{{ "Föreläsningsarkiv" | t }}</a>
+              <a href="/u/lectures" class="brand-button-secondary button-large fw-bold">
+                {{ "Utbildningar" | t }}
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M17.5 7.50001L17.5 2.50001M17.5 2.50001H12.5M17.5 2.50001L10 10M8.33333 2.5H6.5C5.09987 2.5 4.3998 2.5 3.86502 2.77248C3.39462 3.01217 3.01217 3.39462 2.77248 3.86502C2.5 4.3998 2.5 5.09987 2.5 6.5V13.5C2.5 14.9001 2.5 15.6002 2.77248 16.135C3.01217 16.6054 3.39462 16.9878 3.86502 17.2275C4.3998 17.5 5.09987 17.5 6.5 17.5H13.5C14.9001 17.5 15.6002 17.5 16.135 17.2275C16.6054 16.9878 16.9878 16.6054 17.2275 16.135C17.5 15.6002 17.5 14.9001 17.5 13.5V11.6667"
+                    stroke="#CD4158" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<script src="{{ 'lecture-search.js' | template_path }}" defer></script>
+{% include 'new_footer' %}

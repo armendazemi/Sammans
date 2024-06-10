@@ -137,6 +137,10 @@ modal-component
   h1, h2, h3, h4, h5
     @extend .display-xs
 
+.text-xl-p
+  p
+    @include fontSizePxToRem(20)
+
 .text-lg-p
   p
     @extend .text-lg
@@ -198,6 +202,9 @@ modal-component
   a
     @extend .link-small
 
+.white-links
+  a
+    @extend .white-link
 
 .callout-image
   img
@@ -209,6 +216,13 @@ modal-component
 .mobile-nav-link
   padding: $spacing-sm $spacing-xs
   font-weight: 700
+
+
+.border-t-white
+  border-top: 1px solid white
+
+.border-b-secondary
+  border-bottom: 1px solid $border-secondary
 // ------------------------------
 // HEADER
 // ------------------------------
@@ -317,3 +331,15 @@ nav
     border-radius: $spacing-base $spacing-base 0 0
     height: 277px
 
+// ------------------------------
+// PRODUCTS
+// ------------------------------
+.product-tabs
+  .tab-default
+    text-decoration-thickness: 2px
+    text-underline-offset: 7px
+
+.product-card__image-wrapper
+  img
+    width: 100%
+    aspect-ratio: 3/2

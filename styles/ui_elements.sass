@@ -72,7 +72,7 @@ button
   background-color: $background-default
   font-weight: 600
   color: $foreground-brand-default
-  border: 1px solid $border-brand-default
+  border: 3px solid $border-brand-default
 
   @media (hover: hover)
     &:hover
@@ -212,14 +212,14 @@ button
 
 .tab-default
   @extend %link-base
-  color: $text-primary
   @extend .button-lg
+  color: $text-tertiary
 
   &:hover,
   &:active,
   &.active
     text-decoration: underline
-    background-color: $background-hover-light
+    color: $text-brand-default
 
   &:disabled
     color: $text-disabled
@@ -257,7 +257,7 @@ button
   height: 48px
   min-width: 0
   border-radius: $radius-sm !important
-  border: 1px solid $border-primary
+  border: 2px solid $border-primary
   color: $text-primary
   outline: none
   transition: 200ms border-color linear, 200ms color linear, 200ms background-color linear
@@ -267,7 +267,7 @@ button
 
   &:focus-visible,
   &:active
-    border-color: $border-focused-system !important
+    border-color: $border-focused-black !important
 
   &.error
     border-color: $system-error-default !important

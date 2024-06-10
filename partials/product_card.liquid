@@ -1,0 +1,65 @@
+{% assign lecturerNames = ''%}
+{% assign lecturerImages = '' %}
+{% assign counter = 0 %}
+
+<div class="product-card d-flex flex-wrap flex-lg-nowrap row-gap-lg column-gap-2xl">
+  <div class="product-card__image-wrapper col-lg-4">
+    {% if lecture.first_image.url.size > 0 %}
+      <img class="w-100 object-fit-cover radius-md" src="{{ lecture.first_image.url }}" alt="">
+    {% else %}
+      <img class="w-100 object-fit-cover radius-md" src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1171357_medium_lecture-placeholder.webp?1718025222" alt="">
+    {% endif %}
+  </div>
+
+  <div class="product-card__details col-lg-6 d-flex flex-column row-gap-lg  padding-x-lg-0 padding-x-base">
+    <div class="d-flex flex-column row-gap-sm">
+      {% if lecture.tags.size > 0 %}
+        <p class="text-sm fw-bold text-brand-default">{{ lecture.tags[0].name }}</p>
+      {% endif %}
+      <h2 class="display-sm fw-bold">{{ lecture.name }}</h2>
+      <p class="text-md">{{ lecture.description | strip_html | truncate: 120 }}</p>
+    </div>
+
+    {% assign counter = 0 %}
+    {% for lecturer in lists.forelasare-produkter.rows %}
+      {% for assignedLecture in lecturer.produkter %}
+        {% if assignedLecture.id == lecture.master.id %}
+          {% assign lecturerNames = lecturerNames | append: lecturer.namn | append: ',' %}
+          {% assign lecturerImages = lecturerImages | append: lecturer.bild | append: ',' %}
+          {% assign counter = counter | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+
+    <div class="product-card__lecturers d-flex column-gap-base ">
+      {% if counter < 3 %}
+        {% assign counter = counter | minus: 1 %}
+        {% assign lecturerNames = lecturerNames | split: ',' %}
+        {% assign lecturerImages = lecturerImages | split: ',' %}
+        {% for i in (0..counter) %}
+          <div class="d-flex column-gap-sm align-items-center">
+            <img class="radius-full object-fit-cover" alt="" src="{{ lecturerImages[i] }}"
+                 style="height:48px; width: 48px">
+            <p class="text-md fw-bold">{{ lecturerNames[i] }}</p>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="d-flex column-gap-sm align-items-center">
+          <p class="fw-bold text-md d-flex align-items-center justify-content-center" style="height: 48px; width: 48px">
+            +</p>
+          <p class="text-md fw-bold">Flera föreläsare</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="col-lg-auto d-flex align-items-center padding-x-base padding-x-lg-0">
+    <a href="{{ lecture.url }}" class="brand-button-primary button-large">{{ "Läs mer" | t }}</a>
+  </div>
+
+  <div class="product-card__search-terms d-none"
+       data-search-terms="{{ lecture.name }} {{ lecture.description | strip_html }} {{ lecture.tags[0].name }} {{ lecturerNames | join: ' ' }}"
+  ></div>
+
+</div>
+
