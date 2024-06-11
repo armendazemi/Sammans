@@ -60,7 +60,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="{{ 'apple-touch-icon.png' | asset_path }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ 'favicon-32x32.png' | asset_path }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ 'favicon-16x16.png' | asset_path }}">
-  <link rel="manifest" href="{{ 'site.webmanifest' | asset_path }}">
+  {% comment %}<link rel="manifest" href="{{ 'site.webmanifest' | asset_path }}">{% endcomment %}
   <link rel="mask-icon" href="{{ 'safari-pinned-tab.svg' | asset_path }}" color="#f68a31">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
@@ -68,6 +68,11 @@
 
   <!-- Cache busting -->
   {% assign version = "1.0" %}
+
+  <!--- Translations --->
+  <script>
+    window.translations = {{ site.translations | jsonify }};
+  </script>
 
 
   {{ wm3 }}
@@ -129,6 +134,9 @@
         </div>
       </div>
     </nav>
+    {% if cart.order_items.size > 0  and request.cookies.x-no-reminder != 'true'%}
+      {% include 'cart_reminder' %}
+    {% endif %}
   </header>
 
 

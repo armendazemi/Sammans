@@ -78,19 +78,20 @@ $breakpoints: (sm: 568px, md: 768px, lg: 992px, xl: 1200px)
     margin-top: $value !important
     margin-bottom: $value !important
 
-  // Breakpoint classes
-  @each $breakpoint, $breakpoint-value in $breakpoints
-    $breakpoint-name: ''
+// Breakpoint classes
+@each $breakpoint, $breakpoint-value in $breakpoints
+  $breakpoint-name: ''
 
-    @if $breakpoint == sm
-      $breakpoint-name: 'sm'
-    @else if $breakpoint == md
-      $breakpoint-name: 'md'
-    @else if $breakpoint == lg
-      $breakpoint-name: 'lg'
+  @if $breakpoint == sm
+    $breakpoint-name: 'sm'
+  @else if $breakpoint == md
+    $breakpoint-name: 'md'
+  @else if $breakpoint == lg
+    $breakpoint-name: 'lg'
 
-    @if $breakpoint-name != ''
-      @media (min-width: $breakpoint-value)
+  @if $breakpoint-name != ''
+    @media (min-width: $breakpoint-value)
+      @each $size, $value in $spacings
         .gap-#{$breakpoint-name}-#{$size}
           gap: $value !important
 
