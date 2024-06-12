@@ -134,14 +134,14 @@
         </div>
       </div>
     </nav>
-    {% if cart.order_items.size > 0  and request.cookies.x-no-reminder != 'true'%}
+    {% if cart.order_items.size > 0 and request.cookies.x-no-reminder != 'true' and request.path != '/w/checkout' and request.path != '/w/cart' %}
       {% include 'cart_reminder' %}
     {% endif %}
   </header>
 
 
-{% include 'mobile_menu_modal' %}
-{% include 'side_cart' %}
+  {% include 'mobile_menu_modal' %}
+  {% include 'side_cart' %}
 
-<overlay-component></overlay-component>
+  <overlay-component></overlay-component>
 

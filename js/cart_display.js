@@ -1,6 +1,7 @@
 'use strict'
 
 export function handleCartDisplay (data) {
+  console.log(data)
   const order_items = data.order_items;
   const cartItems = document.getElementById('side-cart__items');
   const fragment = document.createDocumentFragment();
@@ -28,13 +29,17 @@ function generateCartItemHtml (item) {
    <div class="side-cart__item">
       <div class="side-cart__image-wrapper">
         <img src="${item.image.url_small}"
-             alt="" height="67" width="100"
+             alt="" height="67" width="100" 
              class="side-cart__image">
       </div>
 
-      <div class="side-cart__content">
+      <a href="${item.links.product.href}" class="side-cart__content" aria-label="${item.name}">
         <p class="side-cart__title">${item.name}</p>
-      </div>
+        <div class="side-cart__availability">
+          <span>${getTranslation("Tillgänglig mellan")}:</span>
+          <span>${item.availability}</span>
+        </div>
+      </a>
     </div>
   `
 }

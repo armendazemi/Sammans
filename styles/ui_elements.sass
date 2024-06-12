@@ -66,6 +66,16 @@ button
     color: $text-disabled
     cursor: not-allowed
 
+  &.inactive
+    background-color: transparent
+    color: $text-disabled
+
+    @media (hover: hover)
+      &:hover
+        background-color: $background-brand-hover
+        color: $foreground-white
+        text-decoration: underline
+
 
 .brand-button-secondary
   @extend %button-base

@@ -44,9 +44,13 @@
                    class="side-cart__image">
             </div>
 
-            <div class="side-cart__content">
+            <a href="{{ item.product.url }}" class="side-cart__content" aria-label="{{ item.product.name }}">
               <p class="side-cart__title">{{ item.product.name }}</p>
-            </div>
+              <div class="side-cart__availability">
+                <span>{{ "Tillgänglig mellan" | t }}:</span>
+                <span>{{ item.product.property_availability.value }}</span>
+              </div>
+            </a>
           </div>
         {% endfor %}
       </div>

@@ -229,6 +229,12 @@ modal-component
 
 .border-b-secondary
   border-bottom: 1px solid $border-secondary
+
+.border-full-secondary
+  border: 1px solid $border-secondary
+
+.border-full-primary
+  border: 1px solid $border-primary
 // ------------------------------
 // HEADER
 // ------------------------------
@@ -304,7 +310,7 @@ nav
 .main-menu--mobile
   display: block
   position: fixed
-  top: 80px
+  //top: 80px
   left: 0
   padding: $spacing-xl 0
   width: 100%
@@ -321,13 +327,30 @@ nav
   padding: $spacing-base $spacing-xs
   border-bottom: 1px solid $border-secondary
 
+.side-cart__content
+  text-decoration: none
+  color: $text-primary
+  display: flex
+  flex-direction: column
+  row-gap: $spacing-sm
+
+  @media (hover: hover)
+    &:hover
+      text-decoration: underline
+
 .side-cart__title
   @extend .text-md
   font-weight: 700
 
+.side-cart__availability
+  display: flex
+  flex-direction: column
+  row-gap: $spacing-3xs
+
 .side-cart__image-wrapper
   height: 67px
   width: 100px
+
   img
     object-fit: cover
     border-radius: $radius-md
@@ -406,3 +429,34 @@ nav
 .lecturer-card__content__position
   @include fontSizePxToRem(18)
   font-weight: 400
+
+// ------------------------------
+// CHECKOUT
+// ------------------------------
+.progress-step__circle
+  height: 32px
+  width: 32px
+  border-radius: $radius-full
+  background-color: $background-secondary
+
+  &.active
+    background-color: $background-brand-default
+    color: $text-white
+
+  @media (min-width: 992px)
+    height: 48px
+    width: 48px
+
+.checkout-card__image
+  height: 100px
+  width: 150px
+  object-fit: cover
+  border-radius: $radius-md
+
+.checkout-card__content
+  text-decoration: none
+  color: $text-primary
+
+  @media (hover: hover)
+    &:hover
+      text-decoration: underline
