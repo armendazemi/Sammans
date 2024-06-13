@@ -1,67 +1,78 @@
 <!-- Private -->
-<fieldset class="contact-info__inputs row row-gap-sm w-100" data-user-form="private">
-  <legend class="visually-hidden">{{ "Privatperson uppgifter" | t }}</legend>
+<form class="w-100" id="private-form" action="/w/cart" data-user-form="private">
+  <fieldset class="contact-info__inputs row row-gap-sm w-100" >
+    <legend class="visually-hidden">{{ "Privatperson uppgifter" | t }}</legend>
 
-  <div class="col-12 col-lg-6">
-    <label for="email" class="text-md margin-bottom-2xs">{{ "E-postadress" | t }}</label>
-    <input type="email" id="email" name="order[email]" class="input-default w-100"
-           placeholder="{{ "exempel@mail.se" | t }}"
-           required>
-  </div>
+    <div class="col-12 col-lg-6">
+      <label for="email" class="text-md margin-bottom-2xs">{{ "E-postadress" | t }}</label>
+      <input type="email" id="email" name="order[email]" class="input-default w-100"
+             placeholder="{{ "exempel@mail.se" | t }}"
+             required>
+    </div>
 
-  <div class="col-12 col-lg-6">
-    <label for="city" class="text-md margin-bottom-2xs">{{ "Stad" | t }}</label>
-    <input type="text" id="city" name="order[bill_address_attributes][city]" class="input-default w-100"
-           placeholder="{{ "Fyll i stad" | t }}" required>
-  </div>
-</fieldset>
+    <div class="col-12 col-lg-6">
+      <label for="city" class="text-md margin-bottom-2xs">{{ "Stad" | t }}</label>
+      <input type="text" id="city" name="order[bill_address_attributes][city]" class="input-default w-100"
+             placeholder="{{ "Fyll i stad" | t }}" required>
+    </div>
+  </fieldset>
+
+  <input type="text" name="order[bill_address_attributes][first_name]" hidden value="Förnamn">
+  <input type="text" name="order[bill_address_attributes][last_name]" hidden value="Efternamn">
+  <input name="order[bill_address_attributes][address1]" type="text" value="Exempelgatan 2" hidden aria-hidden="true">
+  <input name="order[bill_address_attributes][zipcode]" type="text" value="00000" hidden aria-hidden="true">
+  <input name="_method" type="hidden" value="patch">
+</form>
 
 <!-- Organization -->
-<fieldset class="contact-info__inputs row row-gap-sm row-gap-lg-2xl  w-100 d-none" data-user-form="org">
-  <legend class="visually-hidden">{{ "Organisation uppgifter" | t }}</legend>
-  <div class="col-12 col-lg-6">
-    <label for="firstname" class="text-md margin-bottom-2xs">{{ "Förnman" | t }}</label>
-    <input type="text" id="firstname" class="input-default w-100"
-           name="order[bill_address_attributes][first_name]"
-           placeholder="{{ "Fyll i ditt förnamn" | t }}"
-           required>
-  </div>
+<form class="w-100 d-none" id="org-form" action="/w/cart" data-user-form="org">
+  <fieldset class="contact-info__inputs row row-gap-sm row-gap-lg-2xl  w-100 " >
+    <legend class="visually-hidden">{{ "Organisation uppgifter" | t }}</legend>
+    <div class="col-12 col-lg-6">
+      <label for="firstname" class="text-md margin-bottom-2xs">{{ "Förnman" | t }}</label>
+      <input type="text" id="firstname" class="input-default w-100"
+             name="order[bill_address_attributes][first_name]"
+             placeholder="{{ "Fyll i ditt förnamn" | t }}"
+             required>
+    </div>
 
-  <div class="col-12 col-lg-6">
-    <label for="lastname" class="text-md margin-bottom-2xs">{{ "Efternamn" | t }}</label>
-    <input type="text" id="lastname" class="input-default w-100"
-           name="order[bill_address_attributes][last_name]"
-           placeholder="{{ "Fyll i ditt efternamn" | t }}"
-           required>
-  </div>
+    <div class="col-12 col-lg-6">
+      <label for="lastname" class="text-md margin-bottom-2xs">{{ "Efternamn" | t }}</label>
+      <input type="text" id="lastname" class="input-default w-100"
+             name="order[bill_address_attributes][last_name]"
+             placeholder="{{ "Fyll i ditt efternamn" | t }}"
+             required>
+    </div>
 
-  <div class="col-12 col-lg-6">
-    <label for="email-org" class="text-md margin-bottom-2xs">{{ "E-postadress" | t }}</label>
-    <input type="email" id="email-org" name="order[email]" class="input-default w-100"
-           placeholder="{{ "exempel@mail.se" | t }}"
-           required>
-  </div>
+    <div class="col-12 col-lg-6">
+      <label for="email-org" class="text-md margin-bottom-2xs">{{ "E-postadress" | t }}</label>
+      <input type="email" id="email-org" name="order[email]" class="input-default w-100"
+             placeholder="{{ "exempel@mail.se" | t }}"
+             required>
+    </div>
 
-  <div class="col-12 col-lg-6">
-    <label for="city-org" class="text-md margin-bottom-2xs">{{ "Stad" | t }}</label>
-    <input type="text" id="city-org" name="order[bill_address_attributes][city]" class="input-default w-100"
-           placeholder="{{ "Fyll i din stad" | t }}"
-           required>
-  </div>
+    <div class="col-12 col-lg-6">
+      <label for="city-org" class="text-md margin-bottom-2xs">{{ "Stad" | t }}</label>
+      <input type="text" id="city-org" name="order[bill_address_attributes][city]" class="input-default w-100"
+             placeholder="{{ "Fyll i din stad" | t }}"
+             required>
+    </div>
 
-  <div class="col-12 col-lg-6">
-    <label for="org" class="text-md margin-bottom-2xs">{{ "Organisation" | t }}</label>
-    <input type="text" id="org" class="input-default w-100" placeholder="{{ "Fyll i ditt arbete" | t }}"
-           required>
-  </div>
+    <div class="col-12 col-lg-6">
+      <label for="org" class="text-md margin-bottom-2xs">{{ "Organisation" | t }}</label>
+      <input type="text" id="org" class="input-default w-100" placeholder="{{ "Fyll i ditt arbete" | t }}"
+             required>
+    </div>
 
-  <div class="col-12 col-lg-6">
-    <label for="role" class="text-md margin-bottom-2xs">{{ "Befattning" | t }}</label>
-    <input type="text" id="role" class="input-default w-100"
-           placeholder="{{ "Fyll i ditt roll/befattning" | t }}"
-           required>
-  </div>
-</fieldset>
-<!--- Dummy adress data -->
-<input name="order[bill_address_attributes][address1]" type="text" value="Exempelgatan 2" hidden aria-hidden="true">
-<input name="order[bill_address_attributes][zipcode]" type="text" value="00000" hidden aria-hidden="true">
+    <div class="col-12 col-lg-6">
+      <label for="role" class="text-md margin-bottom-2xs">{{ "Befattning" | t }}</label>
+      <input type="text" id="role" class="input-default w-100"
+             placeholder="{{ "Fyll i ditt roll/befattning" | t }}"
+             required>
+    </div>
+  </fieldset>
+  <!--- Dummy adress data -->
+  <input name="order[bill_address_attributes][address1]" type="text" value="Exempelgatan 2" hidden aria-hidden="true">
+  <input name="order[bill_address_attributes][zipcode]" type="text" value="00000" hidden aria-hidden="true">
+  <input name="_method" type="hidden" value="patch">
+</form>
