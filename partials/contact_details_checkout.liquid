@@ -1,6 +1,6 @@
 <!-- Private -->
 <form class="w-100" id="private-form" action="/w/cart" data-user-form="private">
-  <fieldset class="contact-info__inputs row row-gap-sm w-100" >
+  <fieldset class="contact-info__inputs row row-gap-sm w-100">
     <legend class="visually-hidden">{{ "Privatperson uppgifter" | t }}</legend>
 
     <div class="col-12 col-lg-6">
@@ -17,16 +17,16 @@
     </div>
   </fieldset>
 
-  <input type="text" name="order[bill_address_attributes][first_name]" hidden value="Förnamn">
-  <input type="text" name="order[bill_address_attributes][last_name]" hidden value="Efternamn">
   <input name="order[bill_address_attributes][address1]" type="text" value="Exempelgatan 2" hidden aria-hidden="true">
   <input name="order[bill_address_attributes][zipcode]" type="text" value="00000" hidden aria-hidden="true">
+  <input type="text" name="order[extra_field_1]" value="Privat" hidden>
+  <input name="order[bill_address_attributes][country_id]" type="number" value="{{ store.country.id }}" hidden>
   <input name="_method" type="hidden" value="patch">
 </form>
 
 <!-- Organization -->
 <form class="w-100 d-none" id="org-form" action="/w/cart" data-user-form="org">
-  <fieldset class="contact-info__inputs row row-gap-sm row-gap-lg-2xl  w-100 " >
+  <fieldset class="contact-info__inputs row row-gap-sm row-gap-lg-2xl  w-100 ">
     <legend class="visually-hidden">{{ "Organisation uppgifter" | t }}</legend>
     <div class="col-12 col-lg-6">
       <label for="firstname" class="text-md margin-bottom-2xs">{{ "Förnman" | t }}</label>
@@ -60,13 +60,14 @@
 
     <div class="col-12 col-lg-6">
       <label for="org" class="text-md margin-bottom-2xs">{{ "Organisation" | t }}</label>
-      <input type="text" id="org" class="input-default w-100" placeholder="{{ "Fyll i ditt arbete" | t }}"
+      <input type="text" id="org" class="input-default w-100" name="order[bill_address_attributes][company]"
+             placeholder="{{ "Fyll i ditt arbete" | t }}"
              required>
     </div>
 
     <div class="col-12 col-lg-6">
       <label for="role" class="text-md margin-bottom-2xs">{{ "Befattning" | t }}</label>
-      <input type="text" id="role" class="input-default w-100"
+      <input type="text" id="role" class="input-default w-100" name="order[extra_field_2]"
              placeholder="{{ "Fyll i ditt roll/befattning" | t }}"
              required>
     </div>
@@ -74,5 +75,7 @@
   <!--- Dummy adress data -->
   <input name="order[bill_address_attributes][address1]" type="text" value="Exempelgatan 2" hidden aria-hidden="true">
   <input name="order[bill_address_attributes][zipcode]" type="text" value="00000" hidden aria-hidden="true">
+  <input type="text" name="order[extra_field_1]" value="Organisation" hidden>
+  <input name="order[bill_address_attributes][country_id]" type="number" value="{{ store.country.id }}" hidden>
   <input name="_method" type="hidden" value="patch">
 </form>
