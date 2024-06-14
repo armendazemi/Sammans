@@ -1,0 +1,53 @@
+<top-element>
+  <section class="padding-y-5xl padding-y-lg-6xl">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8 d-flex flex-column row-gap-xl">
+          <h1 class="display-lg fw-bold">{{ "Tack för din anmälan!" | t }}</h1>
+          <p class="text-lg">{{ "Ett mail med din bokning har skickats till" | t }}
+            <span class="fw-bold">{{ cart.email }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</top-element>
+
+
+<section class="margin-top-xl">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="order-complete-details padding-2xl radius-lg border-full-secondary d-flex flex-column row-gap-xl">
+          <div class="d-flex flex-column row-gap-sm">
+            <p class="text-md fw-bold">{{ "Ordernummer" | t }} <span class="fw-regular">{{ cart.number }}</span></p>
+            <p class="text-md fw-bold">{{ "Anmälningsdatum" | t }} <span
+                class="fw-regular">{{ cart.completed_at | date: "%Y-%m-%d" }}</span></p>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column row-gap-base">
+          <p class="text-md fw-bold">{{ "Föreläsningar" }}</p>
+          {% for item in cart.order_items %}
+            <div class="side-cart__item border border-0">
+              <div class="side-cart__image-wrapper">
+                <img src="{{ item.product.first_image.small }}"
+                     alt="" height="67" width="100"
+                     class="side-cart__image">
+              </div>
+
+              <a href="{{ item.product.url }}" class="side-cart__content" aria-label="{{ item.product.name }}">
+                <p class="side-cart__title">{{ item.product.name }}</p>
+                <div class="text-tertiary">
+                  <span>{{ "Tillgänglig mellan" | t }}:</span>
+                  <span>{{ item.product.property_availability.value }}</span>
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
