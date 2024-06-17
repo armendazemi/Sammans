@@ -1,0 +1,182 @@
+<mjml>
+    <mj-head>
+        <mj-font name="Montserrat"
+                 href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"/>
+
+        <mj-attributes>
+            <mj-text font-family="Montserrat, sans-serif" font-size="18px" color="#000000" line-height="28px"
+                     padding="0px"/>
+            <mj-image padding="0px"/>
+            <mj-button background-color="#CD4158" font-size="16px" font-family="Montserrat, sans-serif" color="#FFF"
+                       height="48px" text-align="center" padding="12px 16px" border-radius="9999px"/>
+
+            <mj-section padding="0px"/>
+            <mj-class name="big-heading" font-size="24px" font-weight="700" line-height="32px"/>
+            <mj-class name="small-heading" font-size="18px" font-weight="700" line-height="28px"/>
+            <mj-class name="paragraph-text" font-size="16px" font-weight="400" line-height="24px" color="#030712"/>
+        </mj-attributes>
+    </mj-head>
+
+
+    <mj-body background-color="#FFF">
+        <!--- Nav Section -->
+        <mj-section background-color="#CD4158" padding="24px 0">
+            <mj-column width="33.33%"></mj-column>
+            <mj-column width="20.33%" vertical-align="middle">
+                <mj-image
+                        src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172724_original_sammanslogo.png?1718382939"
+                        align="center"/>
+            </mj-column>
+
+            <mj-column width="33.33%" vertical-align="middle">
+                <mj-text font-family="Montserrat, sans-serif" align="center" color="#FFF" font-size="16px"
+                         font-weight="400">
+                    <a href="/" style="color: #FFF; text-decoration: none;">
+                        Öppna i webbläsaren
+                    </a>
+                </mj-text>
+            </mj-column>
+        </mj-section>
+
+        <!--- Hero Section TOP -->
+        <mj-section>
+            <mj-column>
+                <mj-image height="360px"
+                          src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172720_original_mailer-hero.png?1718380773"
+                          alt="Hero">
+                </mj-image>
+            </mj-column>
+        </mj-section>
+
+        <!-- Editable text area 1  -->
+        <mj-section padding="32px 24px">
+            <mj-column width="100%">
+                <mj-text>
+                    Gör små saker med stor kärlek
+                </mj-text>
+                <mj-text mj-class="big-heading">
+                    En vecka kvar: Välkommen med din anmälan!
+                </mj-text>
+                <mj-text mj-class="paragraph-text">
+                    Massa pellentesque maecenas pretium duis vitae nam arcu vestibulum tincidunt. Lacus arcu cursus
+                    velit scelerisque ac cras in gravida sit. Morbi nulla fames morbi luctus feugiat in vitae.
+                </mj-text>
+            </mj-column>
+            <mj-column width="520px" padding-top="32px" border-bottom="1px solid #9CA3AF"></mj-column>
+        </mj-section>
+
+        <!--- Hero Section Middle -->
+        <mj-section>
+            <mj-column>
+                <mj-image height="360px"
+                          src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172720_original_mailer-hero.png?1718380773"
+                          alt="Hero">
+                </mj-image>
+            </mj-column>
+        </mj-section>
+
+        <!-- Editable text area 2 -->
+        <mj-section padding="32px 24px">
+            <mj-column width="100%">
+                <mj-text>
+                    Subtitle
+                </mj-text>
+                <mj-text mj-class="big-heading">
+                    Main title
+                </mj-text>
+                <mj-text mj-class="paragraph-text">
+                    Massa pellentesque maecenas pretium duis vitae nam arcu vestibulum tincidunt. Lacus arcu cursus
+                    velit scelerisque ac cras in gravida sit. Morbi nulla fames morbi luctus feugiat in vitae.
+                </mj-text>
+            </mj-column>
+            <mj-column width="520px" padding-top="32px" border-bottom="1px solid #9CA3AF"></mj-column>
+        </mj-section>
+
+        <mj-section>
+            <mj-column width="100%">
+                <mj-image height="300px" border-radius="8px 8px 0 0 "
+                          src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172720_original_mailer-hero.png?1718380773"
+                          alt="Hero">
+                </mj-image>
+            </mj-column>
+
+            <mj-column width="100%" background-color="#CD4158" padding="32px 24px">
+                <!--- Editable text area 3 -->
+                <mj-text>
+                    Subtitle
+                </mj-text>
+                <mj-text mj-class="big-heading">
+                    Main title
+                </mj-text>
+                <mj-text mj-class="paragraph-text">
+                    Massa pellentesque maecenas pretium duis vitae nam arcu vestibulum tincidunt. Lacus arcu cursus
+                    velit scelerisque ac cras in gravida sit. Morbi nulla fames morbi luctus feugiat in vitae.
+                </mj-text>
+            </mj-column>
+        </mj-section>
+
+
+        <!--- Project Section -->
+        <mj-section padding="32px 24px" background-color="#FCFCFC">
+            <mj-column width="100%" padding-bottom="16px">
+                <mj-text mj-class="paragraph-text" padding="0 32px">
+                    Projektet drivs med hjälp av
+                </mj-text>
+            </mj-column>
+
+            <!-- images here -->
+            <mj-group width="100%">
+                <mj-column width="33.33%" padding="4px 4px">
+                    <mj-image width="100px" padding="12px 10px" align="center"
+                              src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172648_small_v%C3%A4rend.webp?1718372985"
+                    />
+                </mj-column>
+                <mj-column width="33.33%" padding="4px 4px" background-color="white">
+                    <mj-image width="100px" padding="12px 10px"
+                              src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172647_small_sunnerbo.webp?1718372984"
+                    />
+                </mj-column>
+                <mj-column width="33.33%" padding="4px 4px">
+                    <mj-image width="100px" padding="12px 10px" align="center"
+                              src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172646_small_l%C3%A4nsstyrelsen.webp?1718372984"
+                    />
+                </mj-column>
+            </mj-group>
+
+            <mj-group width="100%">
+                <mj-column width="33.33%" padding="4px 4px">
+                    <mj-image width="100px" padding="12px 10px" align="center"
+                              src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172645_small_vxo-komun.webp?1718372983"
+                    />
+                </mj-column>
+                <mj-column width="33.33%" padding="4px 4px">
+                    <mj-image width="100px" padding="12px 10px" align="center"
+                              src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172644_small_lnu.webp?1718372983"
+                    />
+                </mj-column>
+                <mj-column width="33.33%" padding="4px 4px">
+                    <mj-image width="100px" padding="12px 10px" align="center"
+                              src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/template_assets/region_kronoberg.png?1602777107"
+                    />
+                </mj-column>
+            </mj-group>
+        </mj-section>
+
+        <mj-section padding="32px 24px" background-color="#FCFCFC">
+            <mj-column width="100%">
+                <mj-text font-size="14px" color="#475467" padding="0 32px">
+                    Vill du inte längre ta emot nyhtsbrev från oss på Sammans? Avregristrera dig här
+                </mj-text>
+            </mj-column>
+
+            <mj-column width="100%">
+                <mj-spacer height="24px"/>
+                <mj-text mj-class="paragraph-text" font-size="14px" align="center" color="#475467">
+                    © 2024 Sammans
+                </mj-text>
+            </mj-column>
+        </mj-section>
+
+
+    </mj-body>
+</mjml>
