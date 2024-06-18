@@ -21,18 +21,29 @@
     <mj-body background-color="#FFF">
         <!--- Nav Section -->
         <mj-section background-color="#CD4158" padding="24px 0">
-            <mj-column width="160px" vertical-align="middle">
-               <mj-image src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172724_original_sammanslogo.png?1718382939" align="center"/>
+            <mj-column width="33.33%"></mj-column>
+            <mj-column width="20.33%" vertical-align="middle">
+                <mj-image
+                        src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172724_original_sammanslogo.png?1718382939"
+                        align="center"/>
             </mj-column>
 
+            <mj-column width="33.33%" vertical-align="middle">
+                <mj-text font-family="Montserrat, sans-serif" align="center" color="#FFF" font-size="16px"
+                         font-weight="400">
+                    <a href="/" style="color: #FFF; text-decoration: none;">
+                        Öppna i webbläsaren
+                    </a>
+                </mj-text>
+            </mj-column>
         </mj-section>
 
         <!--- Hero Section -->
         <mj-section>
             <mj-column>
                 <mj-image height="360px"
-                        src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172720_original_mailer-hero.png?1718380773"
-                        alt="Hero">
+                          src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172720_original_mailer-hero.png?1718380773"
+                          alt="Hero">
                 </mj-image>
             </mj-column>
         </mj-section>
@@ -54,48 +65,24 @@
             <mj-section padding="32px 24px" background-color="#F3F4F6">
                 <mj-column width="100%">
                     <mj-text mj-class="small-heading">
-                        Du är anmäld till följande föreläsningar:
+                        Såhär fungerar det:
                     </mj-text>
-                    <mj-text padding="16px 0 0 0 " font-family="Montserrat, sans-serif" font-size="14px"
-                             font-weight="700" line-height="20px"
-                             color="#4B5563">
-                        Tillgängliga 2023-10-09 – 2023-11-05
-                    </mj-text>
-                    <mj-text mj-class="paragraph-text">
-                        1 x Mental health first aid (MHFA) 2023-10-09 – 2023-11-05
+                    <mj-text mj-class="paragraph-text" padding-top="8px">
+                        Klicka på knappen nedan för att delta i föreläsningarna i din bokning.
                     </mj-text>
                 </mj-column>
 
-                <mj-column width="100%" padding-top="32px">
-                    <mj-text mj-class="small-heading">
-                        Såhär fungerar det:
-                    </mj-text>
-                    <mj-text mj-class="paragraph-text" padding-top="28px">
-                        Vi kommer att skicka ut ett nytt mail till dig dagen innan eventet med en länk till de
-                        föreläsningar som du anmält dig till.
-                        Fram till dess behöver du inte göra någonting!
+                <mj-column width="100%">
+                    <mj-button href="https://www.google.com" align="left">
+                        Delta
+                    </mj-button>
+                    <mj-text font-size="16px">
+                        Fungerar inte knappen? Klista in följande länk i din webbläsare:
+                        <a style="text-decoration: none; color: #CD4158; font-weight: 700; display: block;" href="https://sammans.se/delta?id=">https://sammans.se/delta?id=</a>
                     </mj-text>
                 </mj-column>
             </mj-section>
         </mj-wrapper>
-
-        <!-- Dina uppgifter -->
-        <mj-section padding="32px 24px">
-            <mj-column>
-                <mj-text mj-class="small-heading">
-                    Dina uppgifter
-                </mj-text>
-                <mj-text mj-class="paragraph-text" padding-top="16px">
-                    Jane Cooper
-                </mj-text>
-                <mj-text mj-class="paragraph-text">
-                    jane.cooper@example.com
-                </mj-text>
-                <mj-text mj-class="paragraph-text">
-                    Enode AB
-                </mj-text>
-            </mj-column>
-        </mj-section>
 
         <!--- Project Section -->
         <mj-section padding="32px 24px" background-color="#FCFCFC">
@@ -109,17 +96,17 @@
             <mj-group width="100%">
                 <mj-column width="33.33%" padding="4px 4px">
                     <mj-image width="100px" padding="12px 10px" align="center"
-                            src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172648_small_v%C3%A4rend.webp?1718372985"
+                              src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172648_small_v%C3%A4rend.webp?1718372985"
                     />
                 </mj-column>
-                <mj-column width="33.33%" padding="4px 4px"  background-color="white">
+                <mj-column width="33.33%" padding="4px 4px" background-color="white">
                     <mj-image width="100px" padding="12px 10px"
-                            src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172647_small_sunnerbo.webp?1718372984"
+                              src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172647_small_sunnerbo.webp?1718372984"
                     />
                 </mj-column>
                 <mj-column width="33.33%" padding="4px 4px">
                     <mj-image width="100px" padding="12px 10px" align="center"
-                            src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172646_small_l%C3%A4nsstyrelsen.webp?1718372984"
+                              src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172646_small_l%C3%A4nsstyrelsen.webp?1718372984"
                     />
                 </mj-column>
             </mj-group>
@@ -127,17 +114,17 @@
             <mj-group width="100%">
                 <mj-column width="33.33%" padding="4px 4px">
                     <mj-image width="100px" padding="12px 10px" align="center"
-                            src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172645_small_vxo-komun.webp?1718372983"
+                              src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172645_small_vxo-komun.webp?1718372983"
                     />
                 </mj-column>
                 <mj-column width="33.33%" padding="4px 4px">
                     <mj-image width="100px" padding="12px 10px" align="center"
-                            src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172644_small_lnu.webp?1718372983"
+                              src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/media/1172644_small_lnu.webp?1718372983"
                     />
                 </mj-column>
                 <mj-column width="33.33%" padding="4px 4px">
                     <mj-image width="100px" padding="12px 10px" align="center"
-                            src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/template_assets/region_kronoberg.png?1602777107"
+                              src="https://d1da7yrcucvk6m.cloudfront.net/sites/855/template_assets/region_kronoberg.png?1602777107"
                     />
                 </mj-column>
             </mj-group>
@@ -151,25 +138,29 @@
                 <mj-spacer height="24px"/>
             </mj-column>
 
-            <mj-column width="200px" >
+            <mj-column width="200px">
                 <mj-text mj-class="small-heading" color="#fff">Sf värend</mj-text>
                 <mj-text mj-class="paragraph-text" color="#fff" padding-top="8px">
                     <svg xmlns="http://www.w3.org/2000/svg" width="19" height="16" viewBox="0 0 19 16" fill="none">
                         <path d="M17.4165 12.9997L11.8808 7.99967M7.11889 7.99967L1.5832 12.9997M1.1665 3.83301L7.9706 8.59588C8.52158 8.98156 8.79707 9.1744 9.09672 9.2491C9.36142 9.31508 9.63826 9.31508 9.90295 9.2491C10.2026 9.1744 10.4781 8.98156 11.0291 8.59588L17.8332 3.83301M5.1665 14.6663H13.8332C15.2333 14.6663 15.9334 14.6663 16.4681 14.3939C16.9386 14.1542 17.321 13.7717 17.5607 13.3013C17.8332 12.7665 17.8332 12.0665 17.8332 10.6663V5.33301C17.8332 3.93288 17.8332 3.23281 17.5607 2.69803C17.321 2.22763 16.9386 1.84517 16.4681 1.60549C15.9334 1.33301 15.2333 1.33301 13.8332 1.33301H5.1665C3.76637 1.33301 3.06631 1.33301 2.53153 1.60549C2.06112 1.84517 1.67867 2.22763 1.43899 2.69803C1.1665 3.23281 1.1665 3.93288 1.1665 5.33301V10.6663C1.1665 12.0665 1.1665 12.7665 1.43899 13.3013C1.67867 13.7717 2.06112 14.1542 2.53153 14.3939C3.06631 14.6663 3.76637 14.6663 5.1665 14.6663Z"
                               stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <a style="color: white; text-decoration: none; margin-left:4px" href="mailto:info@sfvarend.se">info@sfvarend.se</a>
+                    <a style="color: white; text-decoration: none; margin-left:4px" href="mailto:info@sfvarend.se">
+                        info@sfvarend.se
+                    </a>
                 </mj-text>
             </mj-column>
 
-            <mj-column width="300px" >
+            <mj-column width="300px">
                 <mj-text mj-class="small-heading" color="#fff">Sunnerbo sf</mj-text>
                 <mj-text mj-class="paragraph-text" color="#fff" padding-top="8px">
                     <svg xmlns="http://www.w3.org/2000/svg" width="19" height="16" viewBox="0 0 19 16" fill="none">
                         <path d="M17.4165 12.9997L11.8808 7.99967M7.11889 7.99967L1.5832 12.9997M1.1665 3.83301L7.9706 8.59588C8.52158 8.98156 8.79707 9.1744 9.09672 9.2491C9.36142 9.31508 9.63826 9.31508 9.90295 9.2491C10.2026 9.1744 10.4781 8.98156 11.0291 8.59588L17.8332 3.83301M5.1665 14.6663H13.8332C15.2333 14.6663 15.9334 14.6663 16.4681 14.3939C16.9386 14.1542 17.321 13.7717 17.5607 13.3013C17.8332 12.7665 17.8332 12.0665 17.8332 10.6663V5.33301C17.8332 3.93288 17.8332 3.23281 17.5607 2.69803C17.321 2.22763 16.9386 1.84517 16.4681 1.60549C15.9334 1.33301 15.2333 1.33301 13.8332 1.33301H5.1665C3.76637 1.33301 3.06631 1.33301 2.53153 1.60549C2.06112 1.84517 1.67867 2.22763 1.43899 2.69803C1.1665 3.23281 1.1665 3.93288 1.1665 5.33301V10.6663C1.1665 12.0665 1.1665 12.7665 1.43899 13.3013C1.67867 13.7717 2.06112 14.1542 2.53153 14.3939C3.06631 14.6663 3.76637 14.6663 5.1665 14.6663Z"
                               stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <a style="color: white; text-decoration: none; margin-left:4px" href="mailto:cecilia.storm@sunnerbosf.se">cecilia.storm@sunnerbosf.se</a>
+                    <a style="color: white; text-decoration: none; margin-left:4px"
+                       href="mailto:cecilia.storm@sunnerbosf.se">cecilia.storm@sunnerbosf.se
+                    </a>
                 </mj-text>
             </mj-column>
 
