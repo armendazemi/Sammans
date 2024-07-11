@@ -4,9 +4,11 @@
       <div class="col-12 col-lg-6">
 
         <form-component
-          modal="#registerSuccessModal">
+          modal="#registerSuccessModal"
+          action="/w/customer/register"
+          method="post"
+        >
 
-          {% wm3form customer.register_url %}
           {% if flash.notice %}
             <div class="alert alert-success">{{ flash.notice | join: '</div><div class="notice">' }}</div>
           {% endif %}
@@ -26,8 +28,8 @@
 
           <div class="row">
             <div class="col-lg-6 mb-3">
-              <label for="firstName" class="form-label">{{ 'Organisation' | t }}</label>
-              <input type="text" class="form-control" id="firstName" name="customer[company]"
+              <label for="org" class="form-label">{{ 'Organisation' | t }}</label>
+              <input type="text" class="form-control" id="org" name="customer[company]"
                      placeholder="{{ 'Organisation' | t }}" aria-label="{{ 'Organisation' | t }}" required>
             </div>
             <div class="col-lg-6 mb-3">
@@ -67,7 +69,7 @@
             </div>
             <div class="col-lg-12 mb-3">
               <label for="address" class="form-label">{{ 'Adress' | t }}</label>
-              <input type="text" class="form-control" id="firstName" name="customer[bill_address_attributes][address1]"
+              <input type="text" class="form-control" id="address" name="customer[bill_address_attributes][address1]"
                      placeholder="{{ 'Adress' | t }}" aria-label="{{ 'Adress' | t }}">
             </div>
 
@@ -108,64 +110,67 @@
               <div id="passwordHelp" class="form-text">{{ 'Lösenordet måste innahålla minst 6 tecken.' }}</div>
             </div>
             <div class="col-lg-6 mb-3">
-              <label for="password" class="form-label">{{ 'Bekräfta lösenord' | t }}</label>
-              <input type="password" class="form-control" id="password" name="customer[password_confirmation]" required>
+              <label for="passwordConf" class="form-label">{{ 'Bekräfta lösenord' | t }}</label>
+              <input type="password" class="form-control" id="passwordConf" name="customer[password_confirmation]" required>
             </div>
           </div>
 
 
           <button type="submit" class="brand-button-primary button-large col-12">{{ 'Skapa konto' | t }}</button>
+          <input type="hidden" name="_wm3_" value="true">
 
           <p class="mt-5 text-center">{{ 'Har du redan ett konto?' | t }} <a
               href="{{ customer.login_url }}?new=true">{{ 'Logga in' | t }}</a></p>
-          {% endwm3form %}
         </form-component>
       </div>
     </div>
   </div>
 </section>
 
-<modal-component id="registerSuccessModal" class="form-popup-modal success-modal">
-  <div class="register-success-modal">
-    <div class="news-letter-modal__header d-flex margin-bottom-3xs justify-content-between align-items-center">
-      <p class="text-lg text-primary family-heading text-center">{{ "Tack för din registrering!" | t }}</p>
-      <button
-        id="close-button"
-        type="button"
-        class=" navigation-button radius-full"
-        aria-label="Stäng modal"
-        data-modal-action="close"
-        data-modal-element="#registerSuccessModal">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none">
-          <path
-            d="M12 4L4 12M4 4L12 12"
-            stroke="#030712"
-            stroke-width="1.66667"
-            stroke-linecap="round"
-            stroke-linejoin="round"/>
-        </svg>
-      </button>
-    </div>
+<modal-component id="registerSuccessModal" class="full-page-modal success-modal padding-y-3xl padding-y-lg-7xl">
 
-    <div class="news-letter-modal__body">
-      <p
-        class="text-md text-secondary fw-light">{{ 'Vi har nu skickat ett mail till dig där du behöver bekräfta ditt konto.' }}</p>
-      <p
-        class="text-md text-secondary fw-light">{{ 'När du bekräftat ditt konto kan du logga in i utbildningsportalen och anmäla dig på önskade utbildningar.' }}</p>
+  <div class="container h-100">
+    <div class="row h-100 justify-content-center justify-content-center">
+      <div class="col-12">
+        <button
+          id="close-button"
+          type="button"
+          class="padding-y-sm padding-x-3xs d-flex align-items-center column-gap-2xs bg-white fw-semi"
+          aria-label="Stäng modal"
+          data-modal-action="close"
+          data-modal-element="#registerSuccessModal">
+          {{ "Stäng" | t }}
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M15 5L5 15M5 5L15 15" stroke="#030712" stroke-width="1.66667" stroke-linecap="round"
+                  stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="col-12 col-lg-6 register-success-modal">
+        <div class="news-letter-modal__header d-flex  justify-content-between align-items-center">
+          <p
+            class="display-md fw-bold text-primary family-heading text-center margin-bottom-lg">{{ "Tack för din registrering!" | t }}</p>
+        </div>
 
-    </div>
+        <div class="news-letter-modal__body">
+          <p
+            class="text-md text-secondary fw-light">Vi har nu skickat ett mail till dig där du behöver bekräfta ditt
+            konto.
+            <br>
+            När du bekräftat ditt konto kan du logga in i utbildningsportalen och anmäla dig på önskade utbildningar
+          </p>
 
-    <div class="news-letter-modal__footer margin-top-xl d-flex">
-      <button
-        type="button"
-        class="brand-button-primary button-large w-100"
-        data-modal-action="close"
-        data-modal-element="#registerSuccessModal">{{ "Stäng" | t }}</button>
+
+        </div>
+
+        <div class="news-letter-modal__footer margin-top-3xl d-flex flex-column row-gap-sm">
+          <a href="/u/lectures"
+             class="brand-button-primary button-large w-100">{{ "Gå tillbaka till utbildningar" | t }}</a>
+
+          <a href="/w/customer/login"
+             class="brand-button-secondary button-large w-100">{{ "Logga in" | t }}</a>
+        </div>
+      </div>
     </div>
   </div>
 </modal-component>
