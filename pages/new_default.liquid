@@ -13,11 +13,42 @@
 </top-element>
 
 
-<section class="padding-top-base padding-top-lg-2xl padding-bottom-4xl padding-bottom-lg-6xl bg-default">
+<section class="padding-top-base padding-top-lg-2xl padding-bottom-4xl padding-bottom-lg-6xl">
   <div class="container">
-    <div class="row">
+    <div class="row row-gap-2xl">
+      {% if page.root_page.children.size > 0 %}
+        {% include 'subpage_side_menu' %}
+        {{ 'default1' | page_editable: class: 'col-12 col-lg-6 text-secondary default-editable' }}
+        {{ 'default2' | page_editable: class: 'col-12 col-lg-3 display-xs-heading brand-links' }}
+
+      {% else %}
+        
+        {{ 'default1' | page_editable: class: 'col-12 col-lg-8 text-secondary default-editable' }}
+        {{ 'default2' | page_editable: class: 'col-12 col-lg-3 display-xs-heading brand-links' }}
+      {% endif %}
+
 
     </div>
   </div>
 </section>
+
+{% if page.root_page.title contains "ASK" and lists.projket-bilder-ask-undersidor.rows.size > 0 %}
+  <section class="padding-y-5xl padding-y-lg-6xl bg-secondary">
+    <div class="container">
+      <div class="row">
+        <p class="text-lg">{{ "Projektet drivs med hjälp av" }}</p>
+      </div>
+
+      <div class="row row-gap-base margin-top-base">
+        {% for item in lists.projket-bilder-ask-undersidor.rows %}
+          <div class="col-6 col-lg-4 col-xl-2">
+            <a href="{{ item.link }}" aria-label="{{ item.namn }}" class="project-sponsor">
+              <img src="{{ item.bild }}" alt="" class="project-sponsor__image">
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
 {% include 'new_footer' %}

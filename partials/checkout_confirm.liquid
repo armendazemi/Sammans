@@ -57,10 +57,20 @@
 
           <div class="d-flex flex-column row-gap-2xl padding-top-base border-t-secondary">
             <p class="text-lg fw-bold">{{ "Kontaktuppgifter" | t }}</p>
-            <div class="d-flex flex-column row-gap-base">
-              <p>{{ cart.email }}</p>
-              <p>{{ cart.billing_address.city }}</p>
-              123
+            <div class="d-flex flex-column row-gap-xs">
+              {% if cart.billing_address.first_name.size > 0 %}
+                <p class="text-md">{{ cart.billing_address.first_name }} {{ cart.billing_address.last_name }}</p>
+              {% endif %}
+              <p class="text-md">{{ cart.email }}</p>
+              <p class="text-md">{{ cart.billing_address.city }}</p>
+
+              {% if cart.bill_address_attributes.company.size > 0 %}
+                <p class="text-md">{{ cart.bill_address_attributes.company }}</p>
+              {% endif %}
+
+              {% if cart.extra_field_2.size.size > 0 %}
+                <p class="text-md">{{ cart.extra_field_2 }}</p>
+              {% endif %}
             </div>
           </div>
         </div>

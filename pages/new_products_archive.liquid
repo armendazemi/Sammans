@@ -1,55 +1,53 @@
 {% include 'new_header' %}
 
-<top-element>
-  <section class="hero-section position-relative">
-    <div class="hero-image-wrapper">
-      <img
-        height="724"
-        width="1440"
-        src="{{ lists.hero-bild-produkter.rows[0].bild_mobil }}"
-        srcset="{{ lists.hero-bild-produkter.rows[0].bild_mobil }} 768w, {{ lists.hero-bild-produkter.rows[0].bild_desktop }} 1440w"
-        alt="Hero bild">
-    </div>
+<section class="hero-section position-relative">
+  <div class="hero-image-wrapper">
+    <img
+      height="724"
+      width="1440"
+      src="{{ lists.hero-bild-produkter.rows[0].bild_mobil }}"
+      srcset="{{ lists.hero-bild-produkter.rows[0].bild_mobil }} 768w, {{ lists.hero-bild-produkter.rows[0].bild_desktop }} 1440w"
+      alt="Hero bild">
+  </div>
 
 
-    <div class="container hero-text-container">
-      <div class="row align-items-center h-100">
-        <div class="col-12 col-lg-7">
-          <div
-            class="hero-text-wrapper d-flex flex-column row-gap-xl padding-y-2xl padding-x-2xl bg-overlay-black-60 radius-md">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M23.9863 10.2716C19.9876 5.5968 13.3195 4.33929 8.30939 8.62003C3.29929 12.9008 2.59394 20.058 6.5284 25.1208C9.79963 29.3302 19.6995 38.2082 22.9442 41.0817C23.3072 41.4031 23.4887 41.5639 23.7004 41.627C23.8852 41.6822 24.0874 41.6822 24.2722 41.627C24.4839 41.5639 24.6654 41.4031 25.0284 41.0817C28.2731 38.2082 38.173 29.3302 41.4442 25.1208C45.3787 20.058 44.7594 12.8557 39.6632 8.62003C34.567 4.38431 27.985 5.5968 23.9863 10.2716Z"
-                    stroke="#CD4158" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <div class="d-flex flex-column row-gap-xl padding-bottom-base">
-              <h1
-                class="hero-title display-lg fw-bold text-white">{{ lists.hero-bild-produkter.rows[0].rubrik }}</h1>
-              <p class="text-lg text-white">{{ lists.hero-bild-produkter.rows[0].text }}</p>
-            </div>
-            <div class="d-flex flex-column flex-lg-row gap-base">
-              {% if lists.hero-bild-produkter.rows[0].rod_knapp_text.size > 0 %}
-                <a href="{{ lists.hero-bild-produkter.rows[0].rod_knapp_lank }}"
-                   class="brand-button-primary large">
-                  {{ lists.hero-bild-produkter.rows[0].rod_knapp_text }}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M10 3.33301V16.6663M10 16.6663L15 11.6663M10 16.6663L5 11.6663" stroke="white"
-                          stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
-              {% endif %}
+  <div class="container hero-text-container">
+    <div class="row align-items-center h-100">
+      <div class="col-12 col-lg-7">
+        <div
+          class="hero-text-wrapper d-flex flex-column row-gap-xl padding-y-2xl padding-x-2xl bg-overlay-black-60 radius-md">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M23.9863 10.2716C19.9876 5.5968 13.3195 4.33929 8.30939 8.62003C3.29929 12.9008 2.59394 20.058 6.5284 25.1208C9.79963 29.3302 19.6995 38.2082 22.9442 41.0817C23.3072 41.4031 23.4887 41.5639 23.7004 41.627C23.8852 41.6822 24.0874 41.6822 24.2722 41.627C24.4839 41.5639 24.6654 41.4031 25.0284 41.0817C28.2731 38.2082 38.173 29.3302 41.4442 25.1208C45.3787 20.058 44.7594 12.8557 39.6632 8.62003C34.567 4.38431 27.985 5.5968 23.9863 10.2716Z"
+                  stroke="#CD4158" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="d-flex flex-column row-gap-xl padding-bottom-base">
+            <h1
+              class="hero-title display-lg fw-bold text-white">{{ lists.hero-bild-produkter.rows[0].rubrik }}</h1>
+            <p class="text-lg text-white">{{ lists.hero-bild-produkter.rows[0].text }}</p>
+          </div>
+          <div class="d-flex flex-column flex-lg-row gap-base">
+            {% if lists.hero-bild-produkter.rows[0].rod_knapp_text.size > 0 %}
+              <a href="{{ lists.hero-bild-produkter.rows[0].rod_knapp_lank }}"
+                 class="brand-button-primary large">
+                {{ lists.hero-bild-produkter.rows[0].rod_knapp_text }}
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 3.33301V16.6663M10 16.6663L15 11.6663M10 16.6663L5 11.6663" stroke="white"
+                        stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            {% endif %}
 
-              {% if lists.hero-bild-produkter.rows[0].knapp_white_text.size > 0 %}
-                <a href="{{ lists.hero-bild-produkter.rows[0].vit_knapp_text }}"
-                   class="brand-button-secondary large">{{ lists.hero-bild-produkter.rows[0].vit_knapp_lank }}</a>
-              {% endif %}
-            </div>
+            {% if lists.hero-bild-produkter.rows[0].knapp_white_text.size > 0 %}
+              <a href="{{ lists.hero-bild-produkter.rows[0].vit_knapp_text }}"
+                 class="brand-button-secondary large">{{ lists.hero-bild-produkter.rows[0].vit_knapp_lank }}</a>
+            {% endif %}
           </div>
         </div>
       </div>
     </div>
-  </section>
-</top-element>
+  </div>
+</section>
 
 <section class="bg-brand-default padding-y-5xl padding-y-lg-6xl ">
   <div class="container">

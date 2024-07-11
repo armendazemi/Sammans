@@ -1,30 +1,28 @@
 {% include 'new_header' %}
-<top-element>
-  <section class="padding-top-5xl padding-bottom-2xl padding-top-lg-6xl padding-bottom-lg-4xl bg-default">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-lg-4 order-2 order-lg-0">
-          <div class="d-flex flex-column row-gap-xl padding-x-xl padding-top-4xl padding-bottom-2xl">
-            {{ 'product-info' | product_editable: class: 'text-secondary' }}
+<section class="padding-top-5xl padding-bottom-2xl padding-top-lg-6xl padding-bottom-lg-4xl bg-default">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-4 order-2 order-lg-0">
+        <div class="d-flex flex-column row-gap-xl padding-x-xl padding-top-4xl padding-bottom-2xl">
+          {{ 'product-info' | product_editable: class: 'text-secondary d-flex flex-column row-gap-sm ' }}
 
-            <div class="border-t-primary padding-top-xl">
-              <button type="button" aria-label="{{ "Lägg till i varukorgen" | t }}"
-                      class="brand-button-primary button-large" data-action="add-to-cart"
-                      data-variant-id="{{ product.master.id }}" data-quantity="1">
-                {{ "Lägg till i varukorgen" | t }}
-              </button>
-            </div>
+          <div class="border-t-primary padding-top-xl">
+            <button type="button" aria-label="{{ "Lägg till i varukorgen" | t }}"
+                    class="brand-button-primary button-large" data-action="add-to-cart"
+                    data-variant-id="{{ product.master.id }}" data-quantity="1">
+              {{ "Lägg till i varukorgen" | t }}
+            </button>
           </div>
         </div>
+      </div>
 
-        <div class="col-12 col-lg-8">
-          <h1 class="display-lg fw-bold">{{ product.name }}</h1>
-          {{ 'description' | product_editable: class: 'product-single__content' }}
-        </div>
+      <div class="col-12 col-lg-8">
+        <h1 class="display-lg fw-bold padding-y-xl">{{ product.name }}</h1>
+        {{ 'description' | product_editable: class: 'product-single__content d-flex flex-column row-gap-sm ' }}
       </div>
     </div>
-  </section>
-</top-element>
+  </div>
+</section>
 
 {% capture hasContent %}{{ 'lecturer-heading' | has_product_editable }}{% endcapture %}
 {% if hasContent == 'true' %}

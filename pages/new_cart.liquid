@@ -5,92 +5,112 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h1 class="display-md fw-bold">{{ "Fyll i kontaktuppgifter" | t }}</h1>
+          <h1 class="display-md fw-bold">{{ "Anmälan till föreläsningar" | t }}</h1>
         </div>
       </div>
     </div>
   </section>
 </top-element>
 
-<section class="progress-steps padding-y-xl">
-  <div class="container">
-    <div class="row justify-content-center align-items-start">
-      <div class="col-4 col-lg-3">
-        <div class="progress-step d-flex flex-column row-gap-xs align-items-center justify-content-center">
-          <div class="progress-step__circle active d-flex align-items-center justify-content-center ">
-            <span class="progress-step-number">1</span>
-          </div>
-          <p class="text-lg text-center">{{ "Föreläsningar" | t }}</p>
+{% unless cart.order_items > 0 %}
+  <section class="padding-y-5xl padding-y-lg-6xl">
+    <div class="container">
+      <div class="row flex-column align-items-center justify-content-center row-gap-xl">
+        <div class="col-auto">
+          <p class="text-lg">{{ "Du har inte lagt till några föreläsningar" | t }}</p>
+        </div>
+
+        <div class="col-auto">
+          <a href="/" aria-label="Tillbaka till startsidan"
+             class="brand-button-secondary button-large">{{ "Tillbaka" | t }}</a>
         </div>
       </div>
-
-      <div class="col-4 col-lg-3">
-        <div class="progress-step d-flex flex-column row-gap-xs align-items-center justify-content-center">
-          <div class="progress-step__circle d-flex align-items-center justify-content-center ">
-            <span class="progress-step-number">2</span>
-          </div>
-          <p class="text-lg text-center">{{ "Fyll i kontakt uppgifter" | t }}</p>
-        </div>
-      </div>
-
-      <div class="col-4 col-lg-3">
-        <div class="progress-step d-flex flex-column row-gap-xs align-items-center justify-content-center">
-          <div class="progress-step__circle d-flex align-items-center justify-content-center ">
-            <span class="progress-step-number">3</span>
-          </div>
-          <p class="text-lg text-center">{{ "Slutför anmälan" | t }}</p>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="padding-top-2xl padding-bottom-4xl padding-top-lg-4xl padding-bottom-lg-7xl">
-  <div class="container">
-    <div class="row justify-content-center row-gap-xs">
-      {% for item in cart.order_items %}
+{% else %}
+
+  <section class="progress-steps padding-y-xl">
+    <div class="container">
+      <div class="row justify-content-center align-items-start">
+        <div class="col-4 col-lg-3">
+          <div class="progress-step d-flex flex-column row-gap-xs align-items-center justify-content-center">
+            <div class="progress-step__circle active d-flex align-items-center justify-content-center ">
+              <span class="progress-step-number">1</span>
+            </div>
+            <p class="text-lg text-center">{{ "Föreläsningar" | t }}</p>
+          </div>
+        </div>
+
+        <div class="col-4 col-lg-3">
+          <div class="progress-step d-flex flex-column row-gap-xs align-items-center justify-content-center">
+            <div class="progress-step__circle d-flex align-items-center justify-content-center ">
+              <span class="progress-step-number">2</span>
+            </div>
+            <p class="text-lg text-center">{{ "Fyll i kontakt uppgifter" | t }}</p>
+          </div>
+        </div>
+
+        <div class="col-4 col-lg-3">
+          <div class="progress-step d-flex flex-column row-gap-xs align-items-center justify-content-center">
+            <div class="progress-step__circle d-flex align-items-center justify-content-center ">
+              <span class="progress-step-number">3</span>
+            </div>
+            <p class="text-lg text-center">{{ "Slutför anmälan" | t }}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="padding-top-2xl padding-bottom-4xl padding-top-lg-4xl padding-bottom-lg-7xl">
+    <div class="container">
+      <div class="row justify-content-center row-gap-xs">
+        {% for item in cart.order_items %}
+          <div class="col-12 col-lg-10">
+            <div
+              class="checkout-card d-flex align-items-center gap-base gap-lg-2xl padding-y-lg padding-x-base padding-lg-xl border-full-secondary radius-lg">
+              <div class="checkout-card__image-wrapper">
+                <img src="{{ item.product.first_image.small }}"
+                     alt="" height="100" width="150"
+                     class="checkout-card__image">
+              </div>
+
+              <a href="{{ item.product.url }}" aria-label="{{ item.product.name }}"
+                 class="checkout-card__content d-flex flex-column row-gap-sm">
+                <p class="display-xs fw-bold">{{ item.product.name }}</p>
+                <p class="text-sm text-tertiary">{{ "Tillgänglig mellan" | t }}
+                  : {{ item.product.property_availability.value }}</p>
+              </a>
+
+              <div class="checkout-card__delete-container ms-auto">
+                <button type="button" class="brand-link link-large"
+                        data-action="remove-from-cart"
+                        data-variant-id="{{ item.product.master.id }}">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path
+                      d="M7.5 2.5H12.5M2.5 5H17.5M15.8333 5L15.2489 13.7661C15.1612 15.0813 15.1174 15.7389 14.8333 16.2375C14.5833 16.6765 14.206 17.0294 13.7514 17.2497C13.235 17.5 12.5759 17.5 11.2578 17.5H8.74221C7.42409 17.5 6.76503 17.5 6.24861 17.2497C5.79396 17.0294 5.41674 16.6765 5.16665 16.2375C4.88259 15.7389 4.83875 15.0813 4.75107 13.7661L4.16667 5M8.33333 8.75V12.9167M11.6667 8.75V12.9167"
+                      stroke="#CD4158" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  {{ "Radera" | t }}
+                </button>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+
         <div class="col-12 col-lg-10">
-          <div
-            class="checkout-card d-flex align-items-center gap-base gap-lg-2xl padding-y-lg padding-x-base padding-lg-xl border-full-secondary radius-lg">
-            <div class="checkout-card__image-wrapper">
-              <img src="{{ item.product.first_image.small }}"
-                   alt="" height="100" width="150"
-                   class="checkout-card__image">
-            </div>
-
-            <a href="{{ item.product.url }}" aria-label="{{ item.product.name }}"
-               class="checkout-card__content d-flex flex-column row-gap-sm">
-              <p class="display-xs fw-bold">{{ item.product.name }}</p>
-              <p class="text-sm text-tertiary">{{ "Tillgänglig mellan" | t }}
-                : {{ item.product.property_availability.value }}</p>
-            </a>
-
-            <div class="checkout-card__delete-container ms-auto">
-              <button type="button" class="brand-link link-large"
-                      data-action="remove-from-cart"
-                      data-variant-id="{{ item.product.master.id }}">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M7.5 2.5H12.5M2.5 5H17.5M15.8333 5L15.2489 13.7661C15.1612 15.0813 15.1174 15.7389 14.8333 16.2375C14.5833 16.6765 14.206 17.0294 13.7514 17.2497C13.235 17.5 12.5759 17.5 11.2578 17.5H8.74221C7.42409 17.5 6.76503 17.5 6.24861 17.2497C5.79396 17.0294 5.41674 16.6765 5.16665 16.2375C4.88259 15.7389 4.83875 15.0813 4.75107 13.7661L4.16667 5M8.33333 8.75V12.9167M11.6667 8.75V12.9167"
-                    stroke="#CD4158" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                {{ "Radera" | t }}
-              </button>
-            </div>
+          <div class="d-flex justify-content-end padding-y-base">
+            <a href="/w/checkout" class="brand-button-primary button-large">{{ "Fyll i kontaktuppgifter" | t }}</a>
           </div>
-        </div>
-      {% endfor %}
-
-
-      <div class="col-12 col-lg-10">
-        <div class="d-flex justify-content-end padding-y-base">
-          <a href="/w/checkout" class="brand-button-primary button-large">{{ "Fyll i kontaktuppgifter" | t }}</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+{% endunless %}
 
 
 <script src="{{ 'cart_display.js' | template_path }}" type="module"></script>

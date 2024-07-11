@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="und" dir="auto" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
+<html lang="en" dir="auto" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
       xmlns:o="urn:schemas-microsoft-com:office:office">
 
 <head>
@@ -42,6 +42,10 @@
           margin: 13px 0;
       }
 
+      body {
+          background-color: #FCFCFC;
+      }
+
   </style>
   <!--[if mso]>
   <noscript>
@@ -70,19 +74,19 @@
   <!--<![endif]-->
   <style type="text/css">
       @media only screen and (min-width: 480px) {
-          .mj-column-px-160 {
-              width: 160px !important;
-              max-width: 160px;
+          .mj-column-per-33-33 {
+              width: 33.33% !important;
+              max-width: 33.33%;
+          }
+
+          .mj-column-per-20-33 {
+              width: 20.33% !important;
+              max-width: 20.33%;
           }
 
           .mj-column-per-100 {
               width: 100% !important;
               max-width: 100%;
-          }
-
-          .mj-column-per-33-33 {
-              width: 33.33% !important;
-              max-width: 33.33%;
           }
 
           .mj-column-px-200 {
@@ -98,19 +102,19 @@
 
   </style>
   <style media="screen and (min-width:480px)">
-      .moz-text-html .mj-column-px-160 {
-          width: 160px !important;
-          max-width: 160px;
+      .moz-text-html .mj-column-per-33-33 {
+          width: 33.33% !important;
+          max-width: 33.33%;
+      }
+
+      .moz-text-html .mj-column-per-20-33 {
+          width: 20.33% !important;
+          max-width: 20.33%;
       }
 
       .moz-text-html .mj-column-per-100 {
           width: 100% !important;
           max-width: 100%;
-      }
-
-      .moz-text-html .mj-column-per-33-33 {
-          width: 33.33% !important;
-          max-width: 33.33%;
       }
 
       .moz-text-html .mj-column-px-200 {
@@ -138,8 +142,8 @@
   </style>
 </head>
 
-<body style="word-spacing:normal;background-color:#FFFFFF;">
-<div style="background-color:#FFFFFF;" lang="und" dir="auto">
+<body style="word-spacing:normal;background-color:#FCFCFC;">
+<div style="background-color:#FCFCFC;" lang="und" dir="auto">
   <!-- - Nav Section -->
   <!--[if mso | IE]>
   <table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;"
@@ -151,12 +155,13 @@
            style="background:#CD4158;background-color:#CD4158;width:100%;">
       <tbody>
       <tr>
-        <td style="direction:ltr;font-size:0px;padding:24px 0;text-align:center;">
-          <!--[if mso | IE]>
+        <td style="direction:ltr;font-size:0px;padding:24px 0;text-align:center;"><!--[if mso | IE]>
           <table role="presentation" border="0" cellpadding="0" cellspacing="0">
             <tr>
-              <td class="" style="vertical-align:middle;width:160px;"><![endif]-->
-          <div class="mj-column-px-160 mj-outlook-group-fix"
+              <td class="" style="vertical-align:top;width:199.98px;"><![endif]-->
+          <!--[if mso | IE]></td>
+          <td class="" style="vertical-align:middle;width:121.97999999999998px;"><![endif]-->
+          <div class="mj-column-per-20-33 mj-outlook-group-fix"
                style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;width:100%;">
             <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:middle;"
                    width="100%">
@@ -181,8 +186,9 @@
               </tbody>
             </table>
           </div>
-          <!--[if mso | IE]></td></tr></table><![endif]-->
-        </td>
+          <!--[if mso | IE]></td>
+
+          <!--[if mso | IE]></td></tr></table><![endif]--></td>
       </tr>
       </tbody>
     </table>
@@ -266,7 +272,7 @@
               <tr>
                 <td align="left" style="font-size:0px;padding:0px;word-break:break-word;">
                   <div
-                    style="font-family:Montserrat, sans-serif;font-size:24px;font-weight:700;line-height:32px;text-align:left;color:#000000;">
+                    style="font-family:Montserrat, sans-serif;font-size:24px;font-weight:700;line-height:32px;text-align:left;color:#000000; padding-top:8px;">
                     Gör små saker med stor kärlek
                   </div>
                 </td>
@@ -323,22 +329,24 @@
                           </div>
                         </td>
                       </tr>
-                      <tr>
-                        <td align="left" style="font-size:0px;padding:16px 0 0 0 ;word-break:break-word;">
-                          <div
-                            style="font-family:Montserrat, sans-serif;font-size:14px;font-weight:700;line-height:20px;text-align:left;color:#4B5563;">
-                            Tillgängliga 2023-10-09 – 2023-11-05
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td align="left" style="font-size:0px;padding:0px;word-break:break-word;">
-                          <div
-                            style="font-family:Montserrat, sans-serif;font-size:16px;font-weight:400;line-height:24px;text-align:left;color:#030712;">
-                            1 x Mental health first aid (MHFA) 2023-10-09 – 2023-11-05
-                          </div>
-                        </td>
-                      </tr>
+                      {% for item in order.order_items %}
+                        <tr>
+                          <td align="left" style="font-size:0px;padding:16px 0 0 0 ;word-break:break-word;">
+                            <div
+                              style="font-family:Montserrat, sans-serif;font-size:14px;font-weight:700;line-height:20px;text-align:left;color:#4B5563; padding-bottom:8px;">
+                              {{ "Tillgänglig mellan" | t }}: {{ item.product.property_availability.value }}
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="left" style="font-size:0px;padding:0px;word-break:break-word;">
+                            <div
+                              style="font-family:Montserrat, sans-serif;font-size:16px;font-weight:400;line-height:24px;text-align:left;color:#030712;">
+                             {{ item.quantity }}x {{ item.product.name }}
+                            </div>
+                          </td>
+                        </tr>
+                      {% endfor %}
                       </tbody>
                     </table>
                   </div>

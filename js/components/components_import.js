@@ -4,3 +4,4 @@ import ToggleButton from './toggle_button.component.js'
 
 import Overlay from './overlay.component.js'
 import CartButton from './cart_button.component.js'
+import FormComponent from './form.component.js';

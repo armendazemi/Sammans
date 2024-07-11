@@ -17,10 +17,11 @@ html, body
 body
   display: flex
   flex-direction: column
+  background-color: $background-default
 
 header
-  position: fixed
-  top: 0
+  //position: fixed
+  //top: 0
   width: 100%
   z-index: 10
   background-color: $white
@@ -157,6 +158,7 @@ modal-component
   a
     @extend .brand-button-primary
     @extend .button-large
+    @include fontSizePxToRem(16)
     font-weight: 700
 
 
@@ -238,7 +240,7 @@ modal-component
 // ------------------------------
 // HEADER
 // ------------------------------
-nav
+.header-nav
   position: relative
   height: 80px
   z-index: 100
@@ -310,8 +312,8 @@ nav
 .main-menu--mobile
   display: block
   position: fixed
-  //top: 80px
-  left: 0
+  top: 80px
+  //left: 0
   padding: $spacing-xl 0
   width: 100%
   height: calc(100% - 80px)
@@ -377,11 +379,25 @@ nav
   line-height: 0
   @include fontSizePxToRem(11)
 
+.cart-reminder
+  position: sticky
+  top: 0
+  z-index: 10
+
 
 // ------------------------------
 // START
 // ------------------------------
+.hero-section
+  @media (min-width: 992px)
+    min-height: 600px
+    height: 600px
+
+
 .hero-image-wrapper
+  position: absolute
+  inset: 0
+  z-index: -1
   img
     width: 100%
     min-height: 600px
@@ -391,9 +407,6 @@ nav
       max-height: 528px
       aspect-ratio: 6/7
 
-.hero-text-container
-  position: absolute
-  inset: 0
 
 
 .education-card__image
@@ -430,6 +443,9 @@ nav
   @include fontSizePxToRem(18)
   font-weight: 400
 
+.lecturer-card__content__name
+  line-height: 150%
+
 // ------------------------------
 // CHECKOUT
 // ------------------------------
@@ -460,3 +476,32 @@ nav
   @media (hover: hover)
     &:hover
       text-decoration: underline
+
+
+// ------------------------------
+// DEFAULT
+// ------------------------------
+.subpage-nav-dropdown
+  width: calc(100% - 24px) !important
+
+.default-editable
+  img
+    width: 100% !important
+
+.project-sponsor
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 100%
+  height: 50px
+  background-color: white
+  border-radius: $radius-xs
+  padding: 0 40px
+
+  img
+    object-fit: contain
+    width: 100%
+
+  @media (min-width: 992px)
+    height: 70px
+    padding: 12px 40px
