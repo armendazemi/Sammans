@@ -1,0 +1,48 @@
+</div>
+</div>
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+<script src="{{ 'components_import.js' | template_path }}" type="module"></script>
+</body></html>
+
+</html>
+
+
+<top-element>
+  <modal-component id="main-menu">
+    <div class="main-menu--mobile bg-brand-default">
+      <div class="d-flex flex-column row-gap-xs padding-x-base align-items-start nav h-100">
+        {% if customer.logged_in? %}
+          <a
+            class="text-white text-decoration-none w-100 mb-3 {% unless request.path == '/u' %}active {% endunless %}"
+            aria-current="true" href="/u/student?new=true">{{ 'Min profil' | t }}</a>
+        {% endif %}
+
+        <a class="text-white text-decoration-none w-100 {% if request.path == '/u' %}active {% endif %} "
+           aria-current="true" href="/u?new=true">{{ 'Utbildningar' | t }}</a>
+
+
+        <a class="text-white text-decoration-none mt-auto"
+           href="{% if customer.logged_in? %}{{ customer.logout_url }}{% else %}{{ customer.login_url }}?new=true{% endif %}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M5 14.1667C5 14.4594 5 14.6058 5.01306 14.733C5.12146 15.7895 5.8855 16.6622 6.91838 16.9093C7.04279 16.939 7.18792 16.9584 7.47807 16.9971L12.9713 17.7295C14.535 17.938 15.3169 18.0422 15.9237 17.801C16.4565 17.5891 16.9002 17.2006 17.1806 16.7005C17.5 16.1309 17.5 15.3421 17.5 13.7646V6.23539C17.5 4.65786 17.5 3.86909 17.1806 3.29948C16.9002 2.79939 16.4565 2.41086 15.9237 2.19902C15.3169 1.95774 14.535 2.06199 12.9713 2.27048L7.47807 3.00292C7.18788 3.04161 7.04279 3.06095 6.91838 3.09071C5.8855 3.33779 5.12145 4.21047 5.01306 5.26695C5 5.3942 5 5.54057 5 5.83333M10 6.66666L13.3333 9.99999M13.3333 9.99999L10 13.3333M13.3333 9.99999H2.5"
+              stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          {% if customer.logged_in? %}
+            {{ 'Logga ut' | t }}
+          {% else %}
+            {{ 'Logga in' | t }}
+          {% endif %}
+        </a>
+      </div>
+    </div>
+  </modal-component>
+</top-element>
